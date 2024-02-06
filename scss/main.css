@@ -1,0 +1,1976 @@
+@charset "UTF-8";
+/* montserrat-regular - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/montserrat-v26-cyrillic_latin-regular.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-500 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/montserrat-v26-cyrillic_latin-500.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-600 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/montserrat-v26-cyrillic_latin-600.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-700 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/montserrat-v26-cyrillic_latin-700.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.container {
+  max-width: 1157px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/** Главная начало **/
+/*шапка начало*/
+.container_header {
+  max-width: 1324px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  box-shadow: 0px 2px 20px 1px rgba(0, 0, 0, 0.25);
+}
+
+.main-menu {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  padding: 14px 0;
+}
+.main-menu_item {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #434242;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  transition: 0.8s ease;
+}
+.main-menu_item:hover {
+  color: #5C45EA;
+  transition: 0.5s ease;
+}
+
+.main-menu li:nth-child(2) {
+  margin-right: 84px;
+}
+
+.main-menu li:nth-child(3) {
+  margin-right: 84px;
+}
+
+.main-menu li:nth-child(4) {
+  margin-right: 279px;
+}
+
+.logo52px {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-right: 181px;
+}
+
+.logo48px {
+  display: none;
+}
+
+.logo36px {
+  display: none;
+}
+
+.logo52px img {
+  margin-right: 19px;
+}
+
+.off-screen-menu {
+  background-color: rgb(255, 255, 255);
+  height: 92px;
+  width: 100%;
+  max-width: 768px;
+  position: fixed;
+  top: 76px;
+  right: -768px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 3rem;
+  transition: 0.3s ease;
+}
+
+.hr_osm {
+  position: fixed;
+  border: 2px solid #5C45EA;
+  width: 472px;
+  top: 87px;
+  border-radius: 20px;
+}
+
+.div_ham_menu a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #434242;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.div_ham_menu a:nth-child(1) {
+  margin-right: 50px;
+}
+
+.div_ham_menu a:nth-child(2) {
+  margin-right: 50px;
+}
+
+.ham_menu_item {
+  text-decoration: none;
+}
+
+.off-screen-menu ul {
+  display: flex;
+}
+
+.off-screen-menu.active {
+  right: 0;
+}
+
+.off-screen-menu ul li {
+  list-style-type: none;
+}
+
+.ham-menu {
+  height: 35px;
+  width: 32px;
+  margin-left: auto;
+  position: relative;
+  display: none;
+}
+
+.ham-menu span {
+  margin-left: 42px;
+  height: 3px;
+  width: 100%;
+  background-color: #5C45EA;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+  top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+  top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+  top: 75%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/*шапка конец*/
+.hero_title {
+  text-transform: uppercase;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 64px 0 64px 249px;
+}
+
+/*hero блок начало*/
+.hero_div {
+  display: flex;
+}
+
+.sidebar {
+  width: 225px;
+  height: 218px;
+  border-radius: 4px;
+  background: #EBEBEB;
+  position: fixed;
+  left: 18%;
+}
+
+.sidebar ul > li > a {
+  text-decoration: none;
+  color: #405E95;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.sidebar ul > li {
+  list-style-type: none;
+  width: 170px;
+  margin: 26px 0 0 0;
+}
+
+.sidebar ul {
+  margin: 40px 0 0 27px;
+}
+
+.hero_img {
+  margin: 0 0 0 240px;
+  width: 849px;
+  height: 477px;
+}
+
+.sidebar_icon {
+  display: none;
+}
+
+/*hero блок конец*/
+/*расписание начало*/
+.timetable {
+  margin: 40px 0 85px 490px;
+}
+
+.div_timetable h2 {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0 0 51px 0;
+}
+
+.div_timetable_text {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  width: 850px;
+  margin: 0 0 57px 0;
+}
+
+.timetable_table {
+  width: 864px;
+  height: 418px;
+  border-radius: 4px;
+  background: #EBEBEB;
+}
+
+.event_column_regular {
+  color: #000;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.event_column_bold {
+  color: #000;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.timetable_table_hr {
+  border: 1.5px solid #000000;
+  width: 716px;
+  border-radius: 20px;
+}
+
+.event {
+  display: flex;
+}
+
+.event:nth-child(1) {
+  margin: 0 0 29px 0;
+}
+
+.timetable_table_hr {
+  margin: 29px 0 29px 0;
+}
+
+.event_column {
+  margin: 0 0 0 30px;
+}
+
+.events {
+  padding: 30px 0 0 23px;
+}
+
+.ecr_width {
+  width: 322px;
+}
+
+.ecr_width_width {
+  width: 165px;
+}
+
+.display_none_text {
+  display: none;
+}
+
+/*расписание конец*/
+/*ответы на вопросы начало*/
+.ATQ_block {
+  width: 755px;
+  height: auto;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  margin: 0 0 23px 0;
+  padding: 31px 63px 36px 46px;
+}
+
+.ATQ_block p:nth-child(1) {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.ATQ_block p {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 10px 0 0 0;
+}
+
+.div_answers_to_questions {
+  margin: 0 0 0 250px;
+}
+
+.div_answers_to_questions h2 {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 52px 0;
+}
+
+/*ответы на вопросы конец*/
+/*контакты начало*/
+.contacts {
+  margin: 54px 0 105px 500px;
+}
+
+.div_contacts {
+  width: 838px;
+  height: 310px;
+  border-radius: 4px;
+  background: #EBEBEB;
+  padding: 33px 0 0 26px;
+}
+
+.div_contacts_title {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 0 0 17px 0;
+}
+
+.div_contacts_subtext {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.div_contacts_subtext span {
+  font-weight: 600;
+}
+
+.div_contacts_subtext:nth-child(3) {
+  margin: 0 0 17px 0;
+}
+
+.div_contacts_subtext:nth-child(4) {
+  margin: 0 0 22px 0;
+}
+
+.div_contacts_subtext:nth-child(6) {
+  margin: 0 0 22px 0;
+}
+
+/*контакты конец*/
+/*подвал начало*/
+.container_footer {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+footer {
+  background: #5C45EA;
+}
+
+.socials {
+  width: 314px;
+  display: flex;
+  justify-content: space-between;
+  margin: 39px 0 0 83px;
+}
+
+.social_img {
+  width: 70px;
+  height: 70px;
+}
+
+.div_footer {
+  display: flex;
+  padding: 45px 0 56px 0;
+}
+
+.footer_left {
+  margin: 0 157px 0 0;
+}
+
+.footer_left h4 {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 30px;
+  width: 301px;
+  margin: 0 0 23px 0;
+}
+
+.footer_left button {
+  border-radius: 15px;
+  background: #FFF;
+  width: 244px;
+  height: 47px;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+  cursor: pointer;
+  border: none;
+  margin: 0 0 59px 0;
+  transition: 0.8s ease;
+}
+
+.footer_left button:hover {
+  background: rgba(255, 255, 255, 0);
+  border: 2px solid #FFF;
+  color: #ffffff;
+  transition: 0.3s ease-in-out;
+}
+
+.footer_left p {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  width: 480px;
+}
+
+.footer_right p {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 50px;
+}
+
+.footer_right span {
+  font-weight: 600;
+}
+
+/*подвал конец*/
+/** Главная конец **/
+/** Студентам начало **/
+/*Расписание занятий/сессии начало*/
+.classroom_overlay {
+  display: block;
+  margin: auto;
+  background-image: url("../images/classroom.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 363px;
+  background-position: center;
+}
+
+.Schedule_of_classes {
+  margin: 51px 0 0 0;
+}
+
+.container_students {
+  max-width: 1108px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.SOC_title {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 43px 21px;
+}
+
+.SOC_cards {
+  display: flex;
+}
+
+.SOC_cards_left {
+  padding: 26px 0 0 26px;
+  width: 391px;
+  height: 209px;
+  border-radius: 4px;
+  background: #FFF;
+  box-shadow: 15px 0px 20px 4px rgba(92, 69, 234, 0.25);
+  margin: 0 49px 0 0;
+}
+.SOC_cards_left_item:nth-child(1) {
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+.SOC_cards_left_item {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0 0 5px 0;
+}
+
+.SOC_cards_right {
+  padding: 26px 0 0 26px;
+  width: 391px;
+  height: 209px;
+  border-radius: 4px;
+  background: #FFF;
+  box-shadow: 15px 0px 20px 4px rgba(92, 69, 234, 0.25);
+}
+.SOC_cards_right_item:nth-child(1) {
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+.SOC_cards_right_item {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0 0 5px 0;
+}
+.SOC_cards_right_item:nth-child(4) {
+  width: 250px;
+}
+
+.SOC_buttons_div_item {
+  width: 397px;
+  height: 62px;
+  border-radius: 4px;
+  background: #EBEBEB;
+}
+
+.SOC_buttons_div_item {
+  padding: 31px 0 0 20px;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  margin: 0 49px 39px 0;
+}
+
+.SOC_buttons {
+  display: flex;
+}
+
+.SOCB_top {
+  margin: 51px 0 0 0;
+}
+
+.SOCBDI_escpeccialy {
+  padding: 15px 0 17px 20px;
+}
+
+/*Расписание занятий/сессии конец*/
+/*СТУДЕНТЫ ответы на вопрсоы начало*/
+.div_answers_to_questions_students {
+  margin: 0 0 0 0;
+}
+
+/*СТУДЕНТЫ ответы на вопрсоы конец*/
+/*мероприятия и новости начало*/
+.events_and_news {
+  margin: 122px 0 97px 0;
+}
+
+.progress-bar {
+  width: 858px;
+  height: 3px;
+  background-color: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0 0 27px 0;
+}
+
+.progress {
+  height: 100%;
+  background-color: #5C45EA;
+  border-radius: 4px;
+  width: 20%;
+}
+
+.events_and_news_text {
+  display: flex;
+  width: 323px;
+  justify-content: space-between;
+  margin: 0 0 5px 0;
+}
+
+.events_and_news_text p:nth-child(1) {
+  color: #5C45EA;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.events_and_news_text p:nth-child(2) {
+  color: #000000;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.div_events_block {
+  display: flex;
+  width: 720px;
+  justify-content: space-between;
+}
+
+.events_block {
+  width: 323px;
+}
+
+.events_block_text:nth-child(1) {
+  color: #405E95;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 0 19px 0;
+}
+
+.events_block_text:nth-child(2) {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+/*мероприятия и новости конец*/
+/** Студентам конец **/
+/** Профиль начало **/
+.profile {
+  margin: 63px 0 83px 0;
+}
+
+.profile_body {
+  display: flex;
+}
+
+.profile_body_left {
+  width: 415px;
+  height: 470px;
+  border-radius: 4px;
+  background: #EBEBEB;
+  padding: 33px 0 0 52px;
+  margin: 0 150px 0 0;
+}
+
+.profile_body_left_text {
+  width: 348px;
+}
+
+.profile_body_left_text:nth-child(1) {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 26px 0;
+}
+
+.profile_body_left_text {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0 0 5px 0;
+}
+
+.profile_body_left_text span {
+  font-weight: 600;
+}
+
+.profile_body_left_text:nth-child(9) {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 20px 0 0 0;
+}
+
+.profile_body_left button {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+  border: none;
+  width: 253px;
+  height: 47px;
+  border-radius: 4px;
+  background: #5C45EA;
+  margin: 17px 0 0 0;
+}
+
+.profile_body_right h1 {
+  margin: 72px 0 39px 0;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 35px;
+}
+
+textarea {
+  border: none;
+  resize: none;
+  width: 467px;
+  height: 256px;
+  border-radius: 4px;
+  background: #EBEBEB;
+  text-indent: 16px;
+  color: #5C545F;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  padding: 16px 0 0 0;
+}
+
+textarea:focus {
+  outline: 2px solid #5C45EA;
+}
+
+textarea::-moz-placeholder {
+  color: #5C545F;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+textarea::placeholder {
+  color: #5C545F;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+/** Профиль конец **/
+/******************/
+/*                */
+/*                */
+/*     планшет    */
+/*                */
+/*                */
+/******************/
+@media (width: 768px) {
+  .container {
+    max-width: 542px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  /** Главная начало **/
+  /*шапка начало*/
+  .container_header {
+    max-width: 652px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .main-menu li:nth-child(2) {
+    margin-right: 0;
+    display: none;
+  }
+  .main-menu li:nth-child(3) {
+    margin-right: 0;
+    display: none;
+  }
+  .main-menu li:nth-child(4) {
+    margin-right: 0;
+    display: none;
+  }
+  .logo52px {
+    display: none;
+  }
+  .logo48px {
+    display: flex;
+    align-items: center;
+    margin-right: 478px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .logo48px img {
+    margin-right: 19px;
+  }
+  .ham-menu {
+    display: block;
+  }
+  /*шапка конец*/
+  .hero_title {
+    font-size: 20px;
+    margin: 56px 0 33px 17px;
+  }
+  /*hero блок начало*/
+  .sidebar {
+    width: 61px;
+    height: 178px;
+    left: 7%;
+  }
+  .sidebar ul {
+    margin: 18px 0 0 19px;
+  }
+  .sidebar ul li {
+    width: auto;
+  }
+  .sidebar_element_1440px {
+    display: none;
+  }
+  .sidebar_icon {
+    display: block;
+  }
+  .hero_img {
+    width: 420px;
+    height: 235.97px;
+    margin: 0 0 0 17px;
+  }
+  /*hero блок конец*/
+  /*расписание начало*/
+  .timetable {
+    margin: 65px 0 85px 40px;
+  }
+  .div_timetable h2 {
+    font-size: 20px;
+    margin: 0 0 43px 0;
+  }
+  .div_timetable_text {
+    font-size: 14px;
+    line-height: 20px;
+    width: 491px;
+    margin: 0 0 71px 0;
+  }
+  .timetable_table {
+    width: 525px;
+    height: 701px;
+  }
+  .event_column_regular {
+    line-height: 20px;
+    font-size: 14px;
+    margin: 0 30px 0 0;
+  }
+  .event_column_bold {
+    line-height: 20px;
+    font-size: 14px;
+  }
+  .timetable_table_hr {
+    border: 1.5px solid #000000;
+    width: 461px;
+    border-radius: 20px;
+  }
+  .event {
+    display: block;
+  }
+  .event:nth-child(1) {
+    margin: 0 0 29px 0;
+  }
+  .timetable_table_hr {
+    margin: 29px 0 29px 0;
+  }
+  .event_column {
+    margin: 25px 0 25px 0;
+    display: flex;
+  }
+  .events {
+    padding: 5px 0 0 23px;
+  }
+  .ecr_width {
+    width: 300px;
+  }
+  .ecr_width_width {
+    width: auto;
+  }
+  .display_none {
+    display: none;
+  }
+  .dots {
+    display: block;
+  }
+  /*расписание конец*/
+  /*ответы на вопросы начало*/
+  .ATQ_block {
+    width: 417px;
+  }
+  .div_answers_to_questions {
+    margin: 0 0 0 30px;
+  }
+  /*ответы на вопросы конец*/
+  /*контакты начало*/
+  .contacts {
+    margin: 64px 0 105px 60px;
+  }
+  .div_contacts {
+    width: 502px;
+    height: 230px;
+    padding: 23px 0 0 32px;
+  }
+  .div_contacts_title {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0 0 8px 0;
+  }
+  .div_contacts_subtext {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  /*контакты конец*/
+  /*подвал начало*/
+  .container_footer {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .div_footer {
+    display: block;
+    padding: 45px 0 56px 0;
+  }
+  .footer_left {
+    margin-bottom: 40px;
+  }
+  .socials {
+    margin: 40px 0 0 0;
+  }
+  /*подвал конец*/
+  /** Главная конец **/
+  /** Студентам начало **/
+  /*Расписание занятий/сессии начало*/
+  .container_students {
+    max-width: 436px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .classroom_overlay {
+    height: 193.3px;
+  }
+  .SOC_cards {
+    display: block;
+  }
+  .SOC_cards_left {
+    margin: 0 0 43px 0;
+  }
+  .SOC_buttons {
+    display: block;
+  }
+  .SOCB_top {
+    margin: 135px 0 0 0;
+  }
+  /*Расписание занятий/сессии конец*/
+  /*СТУДЕНТЫ ответы на вопрсоы начало*/
+  .div_answers_to_questions_students {
+    margin: 0 0 0 0;
+  }
+  /*СТУДЕНТЫ ответы на вопрсоы конец*/
+  /*мероприятия и новости начало*/
+  .events_and_news {
+    margin: 40px 0 63px 0;
+  }
+  .progress-bar {
+    width: 521px;
+    height: 3px;
+  }
+  .progress {
+    width: 30%;
+  }
+  .events_and_news_text {
+    display: flex;
+    width: 323px;
+    justify-content: space-between;
+    margin: 0 0 5px 0;
+  }
+  .events_and_news_text p:nth-child(1) {
+    color: #5C45EA;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+  .events_and_news_text p:nth-child(2) {
+    color: #000000;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+  .div_events_block {
+    display: block;
+    width: auto;
+  }
+  .events_block {
+    width: 323px;
+    margin: 0 0 42px 0;
+  }
+  /*мероприятия и новости конец*/
+  /** Студентам конец **/
+  /** Профиль начало **/
+  .profile_body {
+    display: block;
+  }
+  .profile_body_right {
+    margin: 0 0 106px 0;
+  }
+  /** Профиль конец **/
+}
+/******************/
+/*                */
+/*  перевёрнутый  */
+/*     планшет    */
+/*                */
+/*                */
+/******************/
+@media (width: 1024px) {
+  .container {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  /** Главная начало **/
+  /*шапка начало*/
+  .container_header {
+    max-width: 908px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .logo52px {
+    display: none;
+  }
+  .logo48px {
+    display: flex;
+    align-items: center;
+    margin-right: 97px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .logo48px img {
+    margin-right: 19px;
+  }
+  .main-menu_item {
+    font-size: 16px;
+  }
+  .main-menu li:nth-child(2) {
+    margin-right: 53px;
+  }
+  .main-menu li:nth-child(3) {
+    margin-right: 53px;
+  }
+  .main-menu li:nth-child(4) {
+    margin-right: 134px;
+  }
+  /*шапка конец*/
+  .hero_title {
+    font-size: 20px;
+    margin: 56px 0 40px 30px;
+  }
+  /*hero блок начало*/
+  .sidebar {
+    width: 61px;
+    height: 178px;
+    left: 14%;
+  }
+  .sidebar ul {
+    margin: 18px 0 0 19px;
+  }
+  .sidebar ul li {
+    width: auto;
+  }
+  .sidebar_element_1440px {
+    display: none;
+  }
+  .sidebar_icon {
+    display: block;
+  }
+  .hero_img {
+    width: 620px;
+    height: 348.34px;
+    margin: 0 0 0 30px;
+  }
+  /*hero блок конец*/
+  /*расписание начало*/
+  .timetable {
+    margin: 65px 0 85px 82px;
+  }
+  .div_timetable h2 {
+    font-size: 24px;
+    margin: 0 0 25px 0;
+  }
+  .div_timetable_text {
+    font-size: 14px;
+    line-height: 20px;
+    width: 491px;
+    margin: 0 0 58px 0;
+  }
+  .timetable_table {
+    width: 525px;
+    height: 701px;
+  }
+  .event_column_regular {
+    line-height: 20px;
+    font-size: 14px;
+    margin: 0 30px 0 0;
+  }
+  .event_column_bold {
+    line-height: 20px;
+    font-size: 14px;
+  }
+  .timetable_table_hr {
+    border: 1.5px solid #000000;
+    width: 461px;
+    border-radius: 20px;
+  }
+  .event {
+    display: block;
+  }
+  .event:nth-child(1) {
+    margin: 0 0 29px 0;
+  }
+  .timetable_table_hr {
+    margin: 29px 0 29px 0;
+  }
+  .event_column {
+    margin: 25px 0 25px 0;
+    display: flex;
+  }
+  .events {
+    padding: 5px 0 0 23px;
+  }
+  .ecr_width {
+    width: 300px;
+  }
+  .ecr_width_width {
+    width: auto;
+  }
+  .display_none {
+    display: none;
+  }
+  .dots {
+    display: block;
+  }
+  /*расписание конец*/
+  /*ответы на вопросы начало*/
+  .ATQ_block {
+    width: 417px;
+  }
+  .div_answers_to_questions {
+    margin: 0 0 0 40px;
+  }
+  /*ответы на вопросы конец*/
+  /*контакты начало*/
+  .contacts {
+    margin: 64px 0 70px 80px;
+  }
+  .div_contacts {
+    width: 502px;
+    height: 230px;
+    padding: 23px 0 0 32px;
+  }
+  .div_contacts_title {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0 0 8px 0;
+  }
+  .div_contacts_subtext {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  /*контакты конец*/
+  /*подвал начало*/
+  .container_footer {
+    max-width: 830px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .footer_left {
+    margin: 0 60px 0 0;
+  }
+  .div_footer {
+    padding: 45px 0 56px 0;
+  }
+  .footer_left {
+    margin-bottom: 40px;
+  }
+  .socials {
+    margin: 40px 0 0 0;
+  }
+  /*подвал конец*/
+  /** Главная конец **/
+  /** Студентам начало **/
+  /*Расписание занятий/сессии начало*/
+  .container_students {
+    max-width: 892px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .classroom_overlay {
+    height: 258.13px;
+  }
+  /*Расписание занятий/сессии конец*/
+  /*СТУДЕНТЫ ответы на вопрсоы начало*/
+  .div_answers_to_questions_students {
+    margin: 0 0 0 0;
+  }
+  /*СТУДЕНТЫ ответы на вопрсоы конец*/
+  /** Студентам конец **/
+  /** Профиль начало **/
+  .profile_body_left {
+    margin: 0 80px 0 0;
+  }
+  textarea {
+    width: 386px;
+  }
+  /** Профиль конец **/
+}
+/******************/
+/*                */
+/*                */
+/*     телефон    */
+/*                */
+/*                */
+/******************/
+@media (width: 480px) {
+  .container {
+    max-width: 430px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  /** Главная начало **/
+  /*шапка начало*/
+  .container_header {
+    max-width: 414px;
+  }
+  .main-menu li:nth-child(2) {
+    margin-right: 0;
+    display: none;
+  }
+  .main-menu li:nth-child(3) {
+    margin-right: 0;
+    display: none;
+  }
+  .main-menu li:nth-child(4) {
+    margin-right: 0;
+    display: none;
+  }
+  .logo52px {
+    display: none;
+  }
+  .logo36px {
+    display: flex;
+    align-items: center;
+    margin-right: 243px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .logo36px img {
+    margin-right: 19px;
+  }
+  .ham-menu {
+    display: block;
+  }
+  .off-screen-menu {
+    background-color: rgb(255, 255, 255);
+    height: 92px;
+    max-width: 480px;
+    top: 64px;
+    right: -480px;
+  }
+  .hr_osm {
+    width: 348px;
+    top: 70px;
+  }
+  .div_ham_menu a {
+    font-size: 13px;
+  }
+  .div_ham_menu a:nth-child(1) {
+    margin-right: 20px;
+  }
+  .div_ham_menu a:nth-child(2) {
+    margin-right: 20px;
+  }
+  /*шапка конец*/
+  .hero_title {
+    font-size: 20px;
+    margin: 37px 0 15px 140px;
+  }
+  /*hero блок начало*/
+  .sidebar {
+    width: 54px;
+    height: 178px;
+    left: 13%;
+  }
+  .sidebar ul {
+    margin: 14px 0 0 16px;
+  }
+  .sidebar ul li {
+    width: auto;
+  }
+  .sidebar_element_1440px {
+    display: none;
+  }
+  .sidebar_icon {
+    display: block;
+  }
+  .hero_img {
+    width: 330px;
+    height: 195.36px;
+    margin: 0 0 0 100px;
+  }
+  /*hero блок конец*/
+  /*расписание начало*/
+  .timetable {
+    margin: 36px 0 39px 127px;
+  }
+  .div_timetable h2 {
+    font-size: 20px;
+    margin: 0 0 25px 0;
+    width: 325px;
+  }
+  .div_timetable_text {
+    font-size: 12px;
+    line-height: 20px;
+    width: 325px;
+    margin: 0 0 58px 0;
+  }
+  .timetable_table {
+    width: 300px;
+    height: 818px;
+  }
+  .event_column_regular {
+    line-height: 20px;
+    font-size: 14px;
+    margin: 0 30px 0 0;
+  }
+  .event_column_bold {
+    line-height: 20px;
+    font-size: 14px;
+  }
+  .timetable_table_hr {
+    border: 1.5px solid #000000;
+    width: 241px;
+    border-radius: 20px;
+  }
+  .event {
+    display: block;
+  }
+  .event:nth-child(1) {
+    margin: 0 0 29px 0;
+  }
+  .timetable_table_hr {
+    margin: 29px 0 29px 0;
+  }
+  .event_column {
+    margin: 25px 0 25px 0;
+    display: flex;
+  }
+  .events {
+    padding: 5px 0 0 23px;
+  }
+  .ecr_width {
+    width: 300px;
+  }
+  .ecr_width_width {
+    width: auto;
+  }
+  .display_none {
+    display: none;
+  }
+  .dots {
+    display: block;
+  }
+  /*расписание конец*/
+  /*ответы на вопросы начало*/
+  .ATQ_block {
+    width: 225px;
+    padding: 23px 40px 24px 29px;
+  }
+  .ATQ_block p:nth-child(1) {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .ATQ_block p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 10px 0 0 0;
+  }
+  .div_answers_to_questions {
+    margin: 0 0 0 103px;
+  }
+  .div_answers_to_questions h2 {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 52px 0;
+  }
+  /*ответы на вопросы конец*/
+  /*контакты начало*/
+  .contacts {
+    margin: 64px 0 49px 125px;
+  }
+  .div_contacts {
+    width: 265px;
+    height: 310px;
+    padding: 23px 0 0 32px;
+  }
+  .div_contacts_title {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0 0 8px 0;
+  }
+  .div_contacts_subtext {
+    font-size: 12px;
+    line-height: 20px;
+    width: 246px;
+  }
+  /*контакты конец*/
+  /*подвал начало*/
+  .container_footer {
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .div_footer {
+    display: block;
+    padding: 45px 0 56px 0;
+  }
+  .footer_left {
+    margin-bottom: 40px;
+  }
+  .socials {
+    margin: 40px 0 0 0;
+  }
+  .footer_left h4 {
+    font-size: 20px;
+  }
+  .footer_left p {
+    font-size: 12px;
+    width: auto;
+  }
+  /*подвал конец*/
+  /** Главная конец **/
+  /** Студентам начало **/
+  /*Расписание занятий/сессии начало*/
+  .classroom_overlay {
+    display: none;
+  }
+  .Schedule_of_classes {
+    margin: 37px 0 0 0;
+  }
+  .container_students {
+    max-width: 334px;
+  }
+  .SOC_title {
+    font-size: 20px;
+    margin: 0 0 19px 11px;
+  }
+  .SOC_cards {
+    display: block;
+  }
+  .SOC_cards_left {
+    padding: 17px 0 0 26px;
+    width: 292px;
+    height: 180px;
+    margin: 0 0 30px 0;
+  }
+  .SOC_cards_left_item {
+    font-size: 12px;
+    margin: 0 0 0 0;
+  }
+  .SOC_cards_right {
+    padding: 17px 0 0 26px;
+    width: 292px;
+    height: 180px;
+  }
+  .SOC_cards_right_item {
+    font-size: 12px;
+    margin: 0 0 0 0;
+  }
+  .SOC_cards_right_item:nth-child(4) {
+    width: 250px;
+  }
+  .SOC_buttons_div_item {
+    width: 308px;
+    height: 45px;
+    border-radius: 4px;
+    background: #EBEBEB;
+  }
+  .SOC_buttons_div_item {
+    padding: 13px 0 0 10px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 30px;
+    margin: 0 31px 25px 0;
+  }
+  .SOC_buttons {
+    display: block;
+  }
+  .SOCB_top {
+    margin: 51px 0 0 0;
+  }
+  .SOCBDI_escpeccialy {
+    padding: 15px 0 0 10px;
+  }
+  /*Расписание занятий/сессии конец*/
+  /*СТУДЕНТЫ ответы на вопрсоы начало*/
+  .div_answers_to_questions_students {
+    margin: 0 0 0 0;
+  }
+  /*СТУДЕНТЫ ответы на вопрсоы конец*/
+  /*мероприятия и новости начало*/
+  .events_and_news {
+    margin: 40px 0 63px 0;
+  }
+  .progress-bar {
+    width: 330px;
+    height: 3px;
+  }
+  .progress {
+    width: 30%;
+  }
+  .events_and_news_text {
+    display: flex;
+    width: 323px;
+    justify-content: space-between;
+    margin: 0 0 5px 0;
+  }
+  .events_and_news_text p:nth-child(1) {
+    color: #5C45EA;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+  .events_and_news_text p:nth-child(2) {
+    color: #000000;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+  .div_events_block {
+    display: block;
+    width: auto;
+  }
+  .events_block {
+    width: 323px;
+    margin: 0 0 42px 0;
+  }
+  /*мероприятия и новости конец*/
+  /** Студентам конец **/
+  /** Профиль начало **/
+  .profile {
+    margin: 46px 0 74px 0;
+  }
+  .profile_body {
+    display: block;
+  }
+  .profile_body_left {
+    width: 330px;
+    height: 504px;
+    border-radius: 4px;
+    background: #EBEBEB;
+    padding: 31px 0 0 32px;
+    margin: 0 0 0 0;
+  }
+  .profile_body_left_text {
+    width: 300px;
+  }
+  textarea {
+    width: 360px;
+  }
+  /** Профиль конец **/
+}
+/******************/
+/*                */
+/*  перевёрнутый  */
+/*     телефон    */
+/*                */
+/*                */
+/******************/
+@media (width: 800px) {
+  .container {
+    max-width: 592px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  /** Главная начало **/
+  /*шапка начало*/
+  .container_header {
+    max-width: 696px;
+  }
+  .main-menu li:nth-child(2) {
+    margin-right: 0;
+    display: none;
+  }
+  .main-menu li:nth-child(3) {
+    margin-right: 0;
+    display: none;
+  }
+  .main-menu li:nth-child(4) {
+    margin-right: 0;
+    display: none;
+  }
+  .logo52px {
+    display: none;
+  }
+  .logo48px {
+    display: flex;
+    align-items: center;
+    margin-right: 478px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .logo48px img {
+    margin-right: 19px;
+  }
+  .ham-menu {
+    display: block;
+  }
+  .off-screen-menu {
+    background-color: rgb(255, 255, 255);
+    height: 92px;
+    max-width: 800px;
+    top: 76px;
+    right: -800px;
+  }
+  .hr_osm {
+    width: 528px;
+    top: 80px;
+  }
+  .div_ham_menu a {
+    font-size: 16px;
+  }
+  .div_ham_menu a:nth-child(1) {
+    margin-right: 50px;
+  }
+  .div_ham_menu a:nth-child(2) {
+    margin-right: 50px;
+  }
+  /*шапка конец*/
+  .hero_title {
+    font-size: 20px;
+    margin: 56px 0 33px 67px;
+  }
+  /*hero блок начало*/
+  .sidebar {
+    width: 61px;
+    height: 178px;
+    left: 12%;
+  }
+  .sidebar ul {
+    margin: 18px 0 0 19px;
+  }
+  .sidebar ul li {
+    width: auto;
+  }
+  .sidebar_element_1440px {
+    display: none;
+  }
+  .sidebar_icon {
+    display: block;
+  }
+  .hero_img {
+    width: 420px;
+    height: 235.97px;
+    margin: 0 0 0 67px;
+  }
+  /*hero блок конец*/
+  /*расписание начало*/
+  .timetable {
+    margin: 65px 0 85px 147px;
+  }
+  .div_timetable h2 {
+    font-size: 20px;
+    margin: 0 0 43px 0;
+  }
+  .div_timetable_text {
+    font-size: 14px;
+    line-height: 20px;
+    width: 491px;
+    margin: 0 0 71px 0;
+  }
+  .timetable_table {
+    width: 525px;
+    height: 701px;
+  }
+  .event_column_regular {
+    line-height: 20px;
+    font-size: 14px;
+    margin: 0 30px 0 0;
+  }
+  .event_column_bold {
+    line-height: 20px;
+    font-size: 14px;
+  }
+  .timetable_table_hr {
+    border: 1.5px solid #000000;
+    width: 461px;
+    border-radius: 20px;
+  }
+  .event {
+    display: block;
+  }
+  .event:nth-child(1) {
+    margin: 0 0 29px 0;
+  }
+  .timetable_table_hr {
+    margin: 29px 0 29px 0;
+  }
+  .event_column {
+    margin: 25px 0 25px 0;
+    display: flex;
+  }
+  .events {
+    padding: 5px 0 0 23px;
+  }
+  .ecr_width {
+    width: 300px;
+  }
+  .ecr_width_width {
+    width: auto;
+  }
+  .display_none {
+    display: none;
+  }
+  .dots {
+    display: block;
+  }
+  /*расписание конец*/
+  /*ответы на вопросы начало*/
+  .ATQ_block {
+    width: 417px;
+  }
+  .div_answers_to_questions {
+    margin: 0 0 0 80px;
+  }
+  /*ответы на вопросы конец*/
+  /*контакты начало*/
+  .contacts {
+    margin: 64px 0 105px 155px;
+  }
+  .div_contacts {
+    width: 502px;
+    height: 230px;
+    padding: 23px 0 0 32px;
+  }
+  .div_contacts_title {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0 0 8px 0;
+  }
+  .div_contacts_subtext {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  /*контакты конец*/
+  /*подвал начало*/
+  .container_footer {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .div_footer {
+    display: block;
+    padding: 45px 0 56px 0;
+  }
+  .footer_left {
+    margin-bottom: 40px;
+  }
+  .socials {
+    margin: 40px 0 0 0;
+  }
+  /*подвал конец*/
+  /** Главная конец **/
+  /** Студентам начало **/
+  /*Расписание занятий/сессии начало*/
+  .classroom_overlay {
+    height: 201.67px;
+  }
+  .container_students {
+    max-width: 422px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .classroom_overlay {
+    height: 193.3px;
+  }
+  .SOC_cards {
+    display: block;
+  }
+  .SOC_cards_left {
+    margin: 0 0 43px 0;
+  }
+  .SOC_buttons {
+    display: block;
+  }
+  .SOCB_top {
+    margin: 135px 0 0 0;
+  }
+  /*Расписание занятий/сессии конец*/
+  /*СТУДЕНТЫ ответы на вопрсоы начало*/
+  .div_answers_to_questions_students {
+    margin: 0 0 0 0;
+  }
+  /*СТУДЕНТЫ ответы на вопрсоы конец*/
+  /*мероприятия и новости начало*/
+  .events_and_news {
+    margin: 40px 0 63px 0;
+  }
+  .progress-bar {
+    width: 521px;
+    height: 3px;
+  }
+  .progress {
+    width: 30%;
+  }
+  .events_and_news_text {
+    display: flex;
+    width: 323px;
+    justify-content: space-between;
+    margin: 0 0 5px 0;
+  }
+  .events_and_news_text p:nth-child(1) {
+    color: #5C45EA;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+  .events_and_news_text p:nth-child(2) {
+    color: #000000;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+  .div_events_block {
+    display: block;
+    width: auto;
+  }
+  .events_block {
+    width: 323px;
+    margin: 0 0 42px 0;
+  }
+  /*мероприятия и новости конец*/
+  /** Студентам конец **/
+  /** Профиль начало **/
+  .profile_body {
+    display: block;
+  }
+  .profile_body_right {
+    margin: 0 0 106px 0;
+  }
+  /** Профиль конец **/
+}/*# sourceMappingURL=main.css.map */

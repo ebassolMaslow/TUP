@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scss/main.css">
+    <title>Профиль студента</title>
+    <link rel="shortcut icon" href="./images/svg/shortcut_icon.svg" type="image/svg">
+
+</head>
+
+<body>
+    <header>
+        <div class="container_header">
+            <nav>
+                <ul class="main-menu">
+                    <li><a class="main-menu_item logo52px" href="./index.html"><img src="./images/svg/logo52px.svg"
+                                alt="логотип">туп</a>
+                        <a class="main-menu_item logo48px" href="./index.html"><img src="./images/svg/logo48px.svg"
+                                alt="логотип">туп</a>
+                        <a class="main-menu_item logo36px" href="./index.html"><img src="./images/svg/logo36px.svg"
+                                alt="логотип">туп</a>
+                    </li>
+                    <li><a class="main-menu_item" href="./students.html">студентам</a></li>
+                    <li><a class="main-menu_item" href="#">помощь и поддержка</a></li>
+                    <li><a class="main-menu_item" href="#">документы</a></li>
+                    <li><a class="main-menu_item" href="./profile.html"><img src="./images/svg/profile25px.svg"
+                                alt="профиль"></a></li>
+                    <li>
+                        <div class="off-screen-menu">
+                            <hr class="hr_osm">
+                            <div class="div_ham_menu">
+                                <a href="#">документы</a>
+                                <a href="#">помощь и поддержка</a>
+                                <a href="./students.html">студентам</a>
+                            </div>
+                        </div>
+                        <div class="ham-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="profile">
+        <div class="container_students">
+            <div class="profile_body">
+                <div class="profile_body_left">
+                    <p class="profile_body_left_text">Ваши данные</p>
+                    <p class="profile_body_left_text"><span>Фамилия:</span> Масликов</p>
+                    <p class="profile_body_left_text"><span>Отчество:</span> Юрьевич</p>
+                    <p class="profile_body_left_text"><span>Имя:</span> Александр</p>
+                    <p class="profile_body_left_text"><span>Группа:</span> ГГ2020</p>
+                    <p class="profile_body_left_text"><span>Специальность:</span> ГГ2020</p>
+                    <p class="profile_body_left_text"><span>Серия и номер:</span> ГГ2020</p>
+                    <p class="profile_body_left_text"><span>Адрес проживания:</span> ул. Семь-восемь, д 5-6, Город Пикапстан</p>
+                    <p class="profile_body_left_text">Данные изменились?</p>
+                    <button>Изменить данные</button>
+                </div>
+                <div class="profile_body_right">
+                    <h1>Есть вопрос? Сотрудник ответит вам в течение 24 лет</h1>
+                    <textarea name="profile_textarea" placeholder="Ваш вопрос" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container_footer">
+            <div class="div_footer">
+                <div class="footer_left">
+                    <h4>Остались вопросы? Задавайте</h4>
+                    <button>задать вопрос</button>
+                    <p>ТУП - Технологический Университет Программирования</p>
+                </div>
+                <div class="footer_right">
+                    <p>+7 485 917 95 27, +7 977 428 63 33 - <span>Деканат</span></p>
+                    <p>+7 977 488 63 70 - <span>Приёмная комиссия</span></p>
+                    <div class="socials">
+                        <a href="#"><img src="./images/svg/vk70px.svg" alt="вк" class="social_img"></a>
+                        <a href="#"><img src="./images/svg/tg70px.svg" alt="телеграмм" class="social_img"></a>
+                        <a href="#"><img src="./images/svg/whatsapp70px.svg" alt="вассап" class="social_img"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/ham_menu.js"></script>
+
+</body>
+
+</html>
