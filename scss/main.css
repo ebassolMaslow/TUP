@@ -79,6 +79,17 @@ header {
   line-height: normal;
   transition: 0.8s ease;
 }
+.main-menu_item_inactive {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #707070;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 0.5;
+}
 .main-menu_item:hover {
   color: #5C45EA;
   transition: 0.5s ease;
@@ -93,7 +104,11 @@ header {
 }
 
 .main-menu li:nth-child(4) {
-  margin-right: 279px;
+  margin-right: 130px;
+}
+
+.main-menu li:nth-child(5) {
+  margin-right: 15px;
 }
 
 .logo52px {
@@ -258,6 +273,12 @@ header {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  transition: 0.3s ease-in-out;
+}
+
+.sidebar ul > li > a:hover {
+  color: #5C45EA;
+  transition: 0.3s ease-in-out;
 }
 
 .sidebar ul > li {
@@ -745,10 +766,10 @@ footer {
 
 .profile_body_left {
   width: 415px;
-  height: 470px;
+  height: auto;
   border-radius: 4px;
   background: #EBEBEB;
-  padding: 33px 0 0 52px;
+  padding: 33px 0 23px 52px;
   margin: 0 150px 0 0;
 }
 
@@ -844,7 +865,125 @@ textarea::placeholder {
   line-height: 30px;
 }
 
+.profile_textarea_button {
+  background-color: #5C45EA;
+  padding: 13px 158px;
+  color: #FFF;
+  font-size: 20px;
+  font-family: Montserrat;
+  border-radius: 15px;
+  border: 2px solid #5C45EA;
+  margin: 20px 0 0 0;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.profile_textarea_button:hover {
+  transition: 0.3s ease-in-out;
+  background-color: #FFF;
+  color: #5C45EA;
+}
+
 /** Профиль конец **/
+/** Авторизация начало **/
+.block_auth {
+  margin: 288px 0 0 680px;
+}
+
+.input_form-email {
+  width: 470px;
+  height: 69px;
+  background: #EBEBEB;
+  border: 0px;
+  padding: 0 15px;
+  color: #5C545F;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: Montserrat;
+}
+
+.div-input_form-email {
+  margin: 0 0 23px 0;
+}
+
+.input_form-email:focus {
+  border: none;
+  outline: none;
+}
+
+.input_form-email::-moz-placeholder {
+  padding: 0 0 0 10px;
+}
+
+.input_form-email::placeholder {
+  padding: 0 0 0 10px;
+}
+
+.label_input_auth {
+  font-family: Montserrat;
+  font-size: 16px;
+  color: #5C545F;
+  font-weight: 500;
+  margin: 0 0 0 10px;
+}
+
+.submit {
+  padding: 17px 218px;
+  color: #FFF;
+  font-size: 24px;
+  line-height: 30px;
+  border: none;
+  border-radius: 10px;
+  background: #5C45EA;
+  margin: 0 0 10px 0;
+}
+
+.reset-pass-text {
+  font-size: 16px;
+  color: #5C545F;
+  font-family: Montserrat;
+  margin: 0 0 0 14px;
+}
+
+/** Авторизация конец **/
+/** админка начало **/
+.admin_table_row {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+  margin: 40px 0 0 300px;
+}
+
+.admin_text {
+  margin: 40px 0 0 300px;
+}
+
+/** админка конец **/
+/** 404 начало **/
+.title404-div {
+  margin: 350px 0 0 0;
+}
+
+.title404 {
+  font-size: 36px;
+  font-family: Montserrat;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.subtitle404 {
+  font-size: 24px;
+  font-family: Montserrat;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  color: #5C545F;
+  display: block;
+  margin: 0 auto;
+}
+
+/** 404 конец **/
 /******************/
 /*                */
 /*                */
@@ -1109,6 +1248,11 @@ textarea::placeholder {
     margin: 0 0 106px 0;
   }
   /** Профиль конец **/
+  /** Авторизация начало **/
+  .block_auth {
+    margin: 288px 0 0 130px;
+  }
+  /** Авторизация конец **/
 }
 /******************/
 /*                */
@@ -1321,6 +1465,11 @@ textarea::placeholder {
     width: 386px;
   }
   /** Профиль конец **/
+  /** Авторизация начало **/
+  .block_auth {
+    margin: 180px 0 0 230px;
+  }
+  /** Авторизация конец **/
 }
 /******************/
 /*                */
@@ -1674,10 +1823,10 @@ textarea::placeholder {
   }
   .profile_body_left {
     width: 330px;
-    height: 504px;
+    height: auto;
     border-radius: 4px;
     background: #EBEBEB;
-    padding: 31px 0 0 32px;
+    padding: 31px 0 23px 32px;
     margin: 0 0 0 0;
   }
   .profile_body_left_text {
@@ -1687,6 +1836,11 @@ textarea::placeholder {
     width: 360px;
   }
   /** Профиль конец **/
+  /** Авторизация начало **/
+  .block_auth {
+    margin: 100px 0 0 0;
+  }
+  /** Авторизация конец **/
 }
 /******************/
 /*                */
@@ -1973,4 +2127,7 @@ textarea::placeholder {
     margin: 0 0 106px 0;
   }
   /** Профиль конец **/
+  .block_auth {
+    margin: 100px 0 0 150px;
+  }
 }/*# sourceMappingURL=main.css.map */

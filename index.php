@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+
+include "./php_connect/connect.php";
+
+if (isset($_SESSION['id_user'])) {
+    $IDuser = $_SESSION['id_user'];
+    if ($IDuser === '') {
+        unset($IDuser);
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -5,7 +20,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="scss/main.css">
-    <title>Технологический университет программирования</title>
+    <title>Первый курс | Технологический университет программирования</title>
+    <meta name="description" content="Добро пожаловать на главную страницу первого курса! Здесь вы найдете информацию о расписании, учебных материалах и актуальных событиях.">
+    <meta name="keywords" content="первый курс, учебный год, расписание, учебные материалы, события"> 
     <link rel="shortcut icon" href="./images/svg/shortcut_icon.svg" type="image/svg">
 
 </head>
@@ -15,25 +32,21 @@
         <div class="container_header">
             <nav>
                 <ul class="main-menu">
-                    <li><a class="main-menu_item logo52px" href="./index.html"><img src="./images/svg/logo52px.svg"
-                                alt="логотип">туп</a>
-                        <a class="main-menu_item logo48px" href="./index.html"><img src="./images/svg/logo48px.svg"
-                                alt="логотип">туп</a>
-                        <a class="main-menu_item logo36px" href="./index.html"><img src="./images/svg/logo36px.svg"
-                                alt="логотип">туп</a>
+                    <li><a class="main-menu_item logo52px" href="./index.php"><img src="./images/svg/logo52px.svg" alt="логотип">туп</a>
+                        <a class="main-menu_item logo48px" href="./index.php"><img src="./images/svg/logo48px.svg" alt="логотип">туп</a>
+                        <a class="main-menu_item logo36px" href="./index.php"><img src="./images/svg/logo36px.svg" alt="логотип">туп</a>
                     </li>
-                    <li><a class="main-menu_item" href="./students.html">студентам</a></li>
-                    <li><a class="main-menu_item" href="#">помощь и поддержка</a></li>
-                    <li><a class="main-menu_item" href="#">документы</a></li>
-                    <li><a class="main-menu_item" href="./profile.html"><img src="./images/svg/profile25px.svg"
-                                alt="профиль"></a></li>
+                    <li><a class="main-menu_item" href="./students.php">студентам</a></li>
+                    <li><a class="main-menu_item_inactive">помощь и поддержка</a></li>
+                    <li><a class="main-menu_item_inactive">документы</a></li>
+                    <li><a class="main-menu_item" href="./profile.php"><img src="./images/svg/profile25px.svg" alt="профиль"></a></li>
                     <li>
                         <div class="off-screen-menu">
                             <hr class="hr_osm">
                             <div class="div_ham_menu">
                                 <a href="#">документы</a>
                                 <a href="#">помощь и поддержка</a>
-                                <a href="./students.html">студентам</a>
+                                <a href="./students.php">студентам</a>
                             </div>
                         </div>
                         <div class="ham-menu">
@@ -59,12 +72,9 @@
                         <li><a class="sidebar_element_1440px" href="#section1">Расписание начала учебного года</a></li>
                         <li><a class="sidebar_element_1440px" href="#section2">помощь для первокурсников</a></li>
                         <li><a class="sidebar_element_1440px" href="#section3">Контакты деканата</a></li>
-                        <li><a class="sidebar_icon" href="#section1"><img src="./images/svg/timetable_sidebar.svg"
-                                    alt="расписание меню слева"></a></li>
-                        <li><a class="sidebar_icon" href="#section2"><img src="./images/svg/question_sidebar.svg"
-                                    alt="вопрос меню слева"></a></li>
-                        <li><a class="sidebar_icon" href="#section3"><img src="./images/svg/profile_sidebar.svg"
-                                    alt="профиль меню слева"></a></li>
+                        <li><a class="sidebar_icon" href="#section1"><img src="./images/svg/timetable_sidebar.svg" alt="расписание меню слева"></a></li>
+                        <li><a class="sidebar_icon" href="#section2"><img src="./images/svg/question_sidebar.svg" alt="вопрос меню слева"></a></li>
+                        <li><a class="sidebar_icon" href="#section3"><img src="./images/svg/profile_sidebar.svg" alt="профиль меню слева"></a></li>
                     </ul>
                 </div>
                 <a><img src="./images/woman_hero.png" alt="фото девушки" class="hero_img"></a>
@@ -218,8 +228,8 @@
     <script>
         var menuItems = document.querySelectorAll('.sidebar li a');
 
-        menuItems.forEach(function (item) {
-            item.addEventListener('click', function (e) {
+        menuItems.forEach(function(item) {
+            item.addEventListener('click', function(e) {
                 e.preventDefault();
                 var target = document.querySelector(this.getAttribute('href'));
                 window.scrollTo({

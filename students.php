@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+
+include "./php_connect/connect.php";
+
+if (isset($_SESSION['id_user'])) {
+    $IDuser = $_SESSION['id_user'];
+    if ($IDuser === '') {
+        unset($IDuser);
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -5,7 +20,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="scss/main.css">
-    <title>Помощь студентам в отчислении</title>
+    <title>Информация для студентов первого курса | Технологический университет программирования</title>
+    <meta name="description" content="Здесь вы найдете полезную информацию для студентов первого курса, включая расписание занятий, актуальные объявления и контактные данные преподавателей.">
+    <meta name="keywords" content="информация для студентов, первый курс, расписание, объявления, контакты, преподаватели">
     <link rel="shortcut icon" href="./images/svg/shortcut_icon.svg" type="image/svg">
 
 </head>
@@ -15,17 +32,17 @@
         <div class="container_header">
             <nav>
                 <ul class="main-menu">
-                    <li><a class="main-menu_item logo52px" href="./index.html"><img src="./images/svg/logo52px.svg"
+                    <li><a class="main-menu_item logo52px" href="./index.php"><img src="./images/svg/logo52px.svg"
                                 alt="логотип">туп</a>
-                        <a class="main-menu_item logo48px" href="./index.html"><img src="./images/svg/logo48px.svg"
+                        <a class="main-menu_item logo48px" href="./index.php"><img src="./images/svg/logo48px.svg"
                                 alt="логотип">туп</a>
-                        <a class="main-menu_item logo36px" href="./index.html"><img src="./images/svg/logo36px.svg"
+                        <a class="main-menu_item logo36px" href="./index.php"><img src="./images/svg/logo36px.svg"
                                 alt="логотип">туп</a>
                     </li>
-                    <li><a class="main-menu_item" href="./students.html">студентам</a></li>
-                    <li><a class="main-menu_item" href="#">помощь и поддержка</a></li>
-                    <li><a class="main-menu_item" href="#">документы</a></li>
-                    <li><a class="main-menu_item" href="./profile.html"><img src="./images/svg/profile25px.svg"
+                    <li><a class="main-menu_item" href="./students.php">студентам</a></li>
+                    <li><a class="main-menu_item_inactive">помощь и поддержка</a></li>
+                    <li><a class="main-menu_item_inactive">документы</a></li>
+                    <li><a class="main-menu_item" href="./profile.php"><img src="./images/svg/profile25px.svg"
                                 alt="профиль"></a></li>
                     <li>
                         <div class="off-screen-menu">
@@ -33,7 +50,7 @@
                             <div class="div_ham_menu">
                                 <a href="#">документы</a>
                                 <a href="#">помощь и поддержка</a>
-                                <a href="./students.html">студентам</a>
+                                <a href="./students.php">студентам</a>
                             </div>
                         </div>
                         <div class="ham-menu">
