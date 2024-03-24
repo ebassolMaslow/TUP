@@ -56,7 +56,7 @@
 
 /** Главная начало **/
 
-/*шапка начало*/
+/*тзапка начало*/
 
 .container_header {
     max-width: 1324px;
@@ -916,7 +916,7 @@ textarea::placeholder {
     line-height: 30px;
 }
 
-.profile_textarea_button{
+.profile_textarea_button {
     background-color: #5C45EA;
     padding: 13px 158px;
     color: #FFF;
@@ -929,7 +929,7 @@ textarea::placeholder {
     transition: .3s ease-in-out;
 }
 
-.profile_textarea_button:hover{
+.profile_textarea_button:hover {
     transition: .3s ease-in-out;
     background-color: #FFF;
     color: #5C45EA;
@@ -957,29 +957,52 @@ textarea::placeholder {
     margin: 288px 0 0 680px;
 }
 
+.block_reg {
+    margin: 188px 0 0 680px;
+}
+
 .input_form-email {
-    width: 470px;
-    height: 69px;
+    border: 2px solid #EBEBEB;
+    width: 484px;
+    height: 65px;
     background: #EBEBEB;
-    border: 0px;
-    padding: 0 15px;
+    padding: 0 15px 0 0;
     color: #5C545F;
     border-radius: 10px;
     font-size: 20px;
     font-family: Montserrat;
+    text-indent: 20px;
+    transition: .3s all ease-in-out;
 }
 
 .div-input_form-email {
     margin: 0 0 23px 0;
 }
 
+.input_form-email:hover {
+    border: 2px solid #5C45EA;
+    transition: .3s all ease-in-out;
+}
+
 .input_form-email:focus {
-    border: none;
+    border: 2px solid #5C45EA;
     outline: none;
+    background: #ffffff;
+    transition: .3s all ease-in-out;
 }
 
 .input_form-email::placeholder {
-    padding: 0 0 0 10px;
+    transition: .3s all ease-in-out;
+}
+
+.input_form-email:focus::placeholder {
+    color: transparent;
+    transition: .3s all ease-in-out;
+}
+
+#showPasswordCheckbox {
+    margin: 27px 0 0 -40px;
+    position: absolute;
 }
 
 .label_input_auth {
@@ -995,10 +1018,40 @@ textarea::placeholder {
     color: #FFF;
     font-size: 24px;
     line-height: 30px;
-    border: none;
     border-radius: 10px;
     background: #5C45EA;
     margin: 0 0 10px 0;
+    max-width: 503px;
+    display: flex;
+    justify-content: center;
+    transition: .3s ease-in-out;
+    border: none;
+}
+
+.submit:hover {
+    background: #405E95;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.error_message_text {
+    background-color: #ffcccc;
+    color: #cc0000;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cc0000;
+    border-radius: 5px;
+    width: 465px;
+    margin: 0 0 10px;
+    text-align: center;
+    font-family: Montserrat;
+}
+
+.h-captcha {
+    display: flex;
+    justify-content: center;
+    width: 503px;
+    margin: 0 0 20px 0;
 }
 
 .reset-pass-text {
@@ -1006,20 +1059,33 @@ textarea::placeholder {
     color: #5C545F;
     font-family: Montserrat;
     margin: 0 0 0 14px;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 483px;
 }
 
+.reset-pass-text:hover {
+    text-decoration: underline;
+}
+
+.reset_password{
+    color: #5C45EA;
+}
 /** Авторизация конец **/
 
 /** админка начало **/
 
-.admin_table_row{
+.admin_table_row {
     display: flex;
     width: 600px;
     justify-content: space-between;
     margin: 40px 0 0 300px;
 }
 
-.admin_text{
+.admin_text {
     margin: 40px 0 0 300px;
 }
 
@@ -1028,11 +1094,11 @@ textarea::placeholder {
 
 /** 404 начало **/
 
-.title404-div{
+.title404-div {
     margin: 350px 0 0 0;
 }
 
-.title404{
+.title404 {
     font-size: 36px;
     font-family: Montserrat;
     font-weight: 600;
@@ -1040,7 +1106,7 @@ textarea::placeholder {
     margin: 0 0 20px 0;
 }
 
-.subtitle404{
+.subtitle404 {
     font-size: 24px;
     font-family: Montserrat;
     font-weight: 400;
@@ -2220,7 +2286,7 @@ textarea::placeholder {
     .block_auth {
         margin: 100px 0 0 0;
     }
-    
+
 
 
     /** Авторизация конец **/
@@ -2626,8 +2692,20 @@ textarea::placeholder {
     /** Профиль конец **/
 
 
-    .block_auth{
+    .block_auth {
         margin: 100px 0 0 150px;
-        }
+    }
+}
 
+
+//стили для бека
+
+.hidden {
+    display: none;
+}
+
+.success-message {
+    font-family: Montserrat;
+    transition: .3s ease-in-out;
+    margin: 10px 0 0 10px;
 }

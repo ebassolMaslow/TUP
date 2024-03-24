@@ -51,7 +51,7 @@
 }
 
 /** Главная начало **/
-/*шапка начало*/
+/*тзапка начало*/
 .container_header {
   max-width: 1324px;
   width: 100%;
@@ -890,33 +890,63 @@ textarea::placeholder {
   margin: 288px 0 0 680px;
 }
 
+.block_reg {
+  margin: 188px 0 0 680px;
+}
+
 .input_form-email {
-  width: 470px;
-  height: 69px;
+  border: 2px solid #EBEBEB;
+  width: 484px;
+  height: 65px;
   background: #EBEBEB;
-  border: 0px;
-  padding: 0 15px;
+  padding: 0 15px 0 0;
   color: #5C545F;
   border-radius: 10px;
   font-size: 20px;
   font-family: Montserrat;
+  text-indent: 20px;
+  transition: 0.3s all ease-in-out;
 }
 
 .div-input_form-email {
   margin: 0 0 23px 0;
 }
 
+.input_form-email:hover {
+  border: 2px solid #5C45EA;
+  transition: 0.3s all ease-in-out;
+}
+
 .input_form-email:focus {
-  border: none;
+  border: 2px solid #5C45EA;
   outline: none;
+  background: #ffffff;
+  transition: 0.3s all ease-in-out;
 }
 
 .input_form-email::-moz-placeholder {
-  padding: 0 0 0 10px;
+  -moz-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 
 .input_form-email::placeholder {
-  padding: 0 0 0 10px;
+  transition: 0.3s all ease-in-out;
+}
+
+.input_form-email:focus::-moz-placeholder {
+  color: transparent;
+  -moz-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.input_form-email:focus::placeholder {
+  color: transparent;
+  transition: 0.3s all ease-in-out;
+}
+
+#showPasswordCheckbox {
+  margin: 27px 0 0 -40px;
+  position: absolute;
 }
 
 .label_input_auth {
@@ -932,10 +962,40 @@ textarea::placeholder {
   color: #FFF;
   font-size: 24px;
   line-height: 30px;
-  border: none;
   border-radius: 10px;
   background: #5C45EA;
   margin: 0 0 10px 0;
+  max-width: 503px;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+  border: none;
+}
+
+.submit:hover {
+  background: #405E95;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.error_message_text {
+  background-color: #ffcccc;
+  color: #cc0000;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #cc0000;
+  border-radius: 5px;
+  width: 465px;
+  margin: 0 0 10px;
+  text-align: center;
+  font-family: Montserrat;
+}
+
+.h-captcha {
+  display: flex;
+  justify-content: center;
+  width: 503px;
+  margin: 0 0 20px 0;
 }
 
 .reset-pass-text {
@@ -943,6 +1003,20 @@ textarea::placeholder {
   color: #5C545F;
   font-family: Montserrat;
   margin: 0 0 0 14px;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 483px;
+}
+
+.reset-pass-text:hover {
+  text-decoration: underline;
+}
+
+.reset_password {
+  color: #5C45EA;
 }
 
 /** Авторизация конец **/
@@ -2130,4 +2204,13 @@ textarea::placeholder {
   .block_auth {
     margin: 100px 0 0 150px;
   }
+}
+.hidden {
+  display: none;
+}
+
+.success-message {
+  font-family: Montserrat;
+  transition: 0.3s ease-in-out;
+  margin: 10px 0 0 10px;
 }/*# sourceMappingURL=main.css.map */

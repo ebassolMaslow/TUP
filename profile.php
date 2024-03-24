@@ -11,7 +11,7 @@ if (isset($_SESSION['id_user'])) {
 }
 
 if (!isset($_SESSION['id_user'])) {
-    header("Location: ./index_auth.php");
+    header("Location: ./index_reg.php");
     exit;
 }
 
@@ -89,6 +89,17 @@ $InfoUser = mysqli_fetch_object($resInfoUser);
                         <input type="hidden" name="id_user" value="<?php echo $InfoUser->id_user; ?>">
                         <input class="profile_textarea_button" type="submit" value="Задать вопрос">
                     </form>
+                    <?php
+                    session_start();
+                    if (isset($_SESSION['success_message'])) {
+                        echo "<div class='success-message'>" . $_SESSION['success_message'] . "</div>";
+                        unset($_SESSION['success_message']); // Удаление сообщения после его показа
+                    }
+                    if (isset($_SESSION['error_message'])) {
+                        echo "<div class='error-message'>" . $_SESSION['error_message'] . "</div>";
+                        unset($_SESSION['error_message']); // Удаление сообщения после его показа
+                    }
+                    ?>
                 </div>
             </div>
         </div>
