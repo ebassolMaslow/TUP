@@ -21,23 +21,22 @@ if (isset($_POST['password'])) {
 $login = trim($_POST['login']);
 $password = trim($_POST['password']);
 
-$check_user = "SELECT * FROM `user` WHERE `login`= '$login'";
+$stmt = mysqli_prepare($connect, "SELECT * FROM `user` WHERE `login`= ?");
+mysqli_stmt_bind_param($stmt, "s", $login);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
-$result = mysqli_query($connect, $check_user);
+$info_user = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-$info_user = mysqli_fetch_array($result);
-
-if (empty($info_user['id_user'])) {
+if (empty($info_user['id_user']) || !password_verify($password, $info_user['password'])) {
     $_SESSION['message'] = "Неправильный логин или пароль";
     header("location: ../index_auth.php");
 } else {
-    if (password_verify($password, $info_user['password'])) {
-        $_SESSION['login'] = $info_user['login'];
-        $_SESSION['id_user'] = $info_user['id_user'];
-        if (empty($info_user['secret_key'])) {
-            header("location: ../profile.php");
-        } else {
-            header("location: ../index_auth.php");
-        }
+    $_SESSION['login'] = $info_user['login'];
+    $_SESSION['id_user'] = $info_user['id_user'];
+    if (empty($info_user['secret_key'])) {
+        header("location: ../profile.php");
+    } else {
+        header("location: ../index_auth.php");
     }
 }

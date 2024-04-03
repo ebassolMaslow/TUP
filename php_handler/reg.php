@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
                     exit();
                 } else {
                     $reg_user = "INSERT INTO `user` (login, email, password, id_role) VALUES ('$login', '$email', '$hash','2')";
-                    if ($password === $confirmpassword) {
+                    if (password_verify($confirmpassword, $hash)) {
                         $result = mysqli_query($connect, $reg_user);
                         if ($result) {
                             header("location: ../index_auth.php");

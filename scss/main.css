@@ -53,7 +53,7 @@
 /** Главная начало **/
 /*тзапка начало*/
 .container_header {
-  max-width: 1324px;
+  max-width: 1331px;
   width: 100%;
   margin: 0 auto;
 }
@@ -77,18 +77,18 @@ header {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  transition: 0.8s ease;
+  transition: 0.5s ease;
 }
-.main-menu_item_inactive {
+.main-menu_active {
   text-decoration: none;
   text-transform: uppercase;
-  color: #707070;
+  color: #5C45EA;
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  opacity: 0.5;
+  transition: 0.5s ease;
 }
 .main-menu_item:hover {
   color: #5C45EA;
@@ -96,22 +96,26 @@ header {
 }
 
 .main-menu li:nth-child(2) {
-  margin-right: 84px;
+  margin-right: 78px;
 }
 
 .main-menu li:nth-child(3) {
-  margin-right: 84px;
+  margin-right: 78px;
 }
 
 .main-menu li:nth-child(4) {
-  margin-right: 130px;
+  margin-right: 78px;
 }
 
 .main-menu li:nth-child(5) {
-  margin-right: 15px;
+  margin-right: 74px;
 }
 
-.logo52px {
+.main-menu li:nth-child(6) {
+  width: 100px;
+}
+
+.logo {
   text-decoration: none;
   text-transform: uppercase;
   display: flex;
@@ -120,57 +124,73 @@ header {
   font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: normal;
-  margin-right: 181px;
+  margin-right: 182px;
 }
 
-.logo48px {
-  display: none;
+.logo_active {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  color: #5C45EA;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-right: 182px;
 }
 
-.logo36px {
-  display: none;
-}
-
-.logo52px img {
-  margin-right: 19px;
+.logo img {
+  width: 50%;
+  max-width: 52px;
+  min-width: 36px;
+  margin: 0 19px 0 0;
 }
 
 .off-screen-menu {
-  background-color: rgb(255, 255, 255);
-  height: 92px;
+  background-color: #5C45EA;
+  height: 100%;
   width: 100%;
-  max-width: 768px;
+  max-width: 345px;
   position: fixed;
-  top: 76px;
-  right: -768px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  right: -345px;
   text-align: center;
   font-size: 3rem;
   transition: 0.3s ease;
+  top: 0;
 }
 
-.hr_osm {
-  position: fixed;
-  border: 2px solid #5C45EA;
-  width: 472px;
-  top: 87px;
-  border-radius: 20px;
+.div_ham_menu {
+  direction: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 80px 0 0 40px;
 }
 
 .div_ham_menu a {
   text-transform: uppercase;
   text-decoration: none;
-  color: #434242;
+  color: #ffffff;
   font-family: Montserrat;
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-bottom: 23px;
+  transition: 0.3s ease-in-out;
+}
+
+.div_ham_menu a:hover {
+  color: #434242;
+  transition: 0.3s ease-in-out;
+}
+
+.main-menu_item_exit {
+  margin-right: 78px;
 }
 
 .div_ham_menu a:nth-child(1) {
@@ -183,10 +203,6 @@ header {
 
 .ham_menu_item {
   text-decoration: none;
-}
-
-.off-screen-menu ul {
-  display: flex;
 }
 
 .off-screen-menu.active {
@@ -202,20 +218,28 @@ header {
   width: 32px;
   margin-left: auto;
   position: relative;
-  display: none;
+  cursor: pointer;
 }
 
 .ham-menu span {
-  margin-left: 42px;
   height: 3px;
   width: 100%;
-  background-color: #5C45EA;
+  background-color: #000;
   border-radius: 25px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: 0.3s ease;
+  transition: 0.3s ease-in-out;
+}
+
+.ham-menu.active span {
+  background-color: white;
+  transition: 0.3 ease-in-out;
+}
+
+.ham-menu span:hover {
+  cursor: pointer;
 }
 
 .ham-menu span:nth-child(1) {
@@ -227,8 +251,8 @@ header {
 }
 
 .ham-menu.active span:nth-child(1) {
-  top: 75%;
-  transform: translate(-50%, -50%) rotate(45deg);
+  top: 55%;
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .ham-menu.active span:nth-child(2) {
@@ -236,7 +260,8 @@ header {
 }
 
 .ham-menu.active span:nth-child(3) {
-  transform: translate(-50%, -50%) rotate(-45deg);
+  top: 55%;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 /*шапка конец*/
@@ -258,9 +283,10 @@ header {
 
 .sidebar {
   width: 225px;
-  height: 218px;
-  border-radius: 4px;
-  background: #EBEBEB;
+  height: 202px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 4px rgba(140, 128, 128, 0.25);
+  background: #fff;
   position: fixed;
   left: 18%;
 }
@@ -288,7 +314,7 @@ header {
 }
 
 .sidebar ul {
-  margin: 40px 0 0 27px;
+  margin: 20px 0 0 27px;
 }
 
 .hero_img {
@@ -532,13 +558,11 @@ footer {
   cursor: pointer;
   border: none;
   margin: 0 0 59px 0;
-  transition: 0.8s ease;
+  transition: 0.3s ease-in-out;
 }
 
 .footer_left button:hover {
-  background: rgba(255, 255, 255, 0);
-  border: 2px solid #FFF;
-  color: #ffffff;
+  background: #f2f2f2;
   transition: 0.3s ease-in-out;
 }
 
@@ -607,6 +631,9 @@ footer {
   background: #FFF;
   box-shadow: 15px 0px 20px 4px rgba(92, 69, 234, 0.25);
   margin: 0 49px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .SOC_cards_left_item:nth-child(1) {
   font-weight: 600;
@@ -619,6 +646,11 @@ footer {
   font-weight: 400;
   line-height: 30px;
   margin: 0 0 5px 0;
+  text-decoration: none;
+}
+.SOC_cards_left_item:nth-child(2):hover, .SOC_cards_left_item:nth-child(3):hover, .SOC_cards_left_item:nth-child(4):hover, .SOC_cards_left_item:nth-child(5):hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .SOC_cards_right {
@@ -628,6 +660,9 @@ footer {
   border-radius: 4px;
   background: #FFF;
   box-shadow: 15px 0px 20px 4px rgba(92, 69, 234, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .SOC_cards_right_item:nth-child(1) {
   font-weight: 600;
@@ -639,27 +674,40 @@ footer {
   font-size: 18px;
   font-weight: 400;
   line-height: 30px;
+  text-decoration: none;
   margin: 0 0 5px 0;
 }
 .SOC_cards_right_item:nth-child(4) {
   width: 250px;
 }
-
-.SOC_buttons_div_item {
-  width: 397px;
-  height: 62px;
-  border-radius: 4px;
-  background: #EBEBEB;
+.SOC_cards_right_item:nth-child(2):hover, .SOC_cards_right_item:nth-child(3):hover, .SOC_cards_right_item:nth-child(4):hover, .SOC_cards_right_item:nth-child(5):hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-.SOC_buttons_div_item {
-  padding: 31px 0 0 20px;
+.SOC_buttons_div_item_link {
+  text-decoration: none;
   color: #000;
   font-family: Montserrat;
   font-size: 20px;
   font-weight: 700;
   line-height: 30px;
+  padding: 0 33px 0 34px;
   margin: 0 49px 39px 0;
+  min-width: 350px;
+  height: 93px;
+  border-radius: 4px;
+  background: #EBEBEB;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SOC_buttons_div_item_link:hover {
+  background: #DDDDDD;
+  text-decoration: underline;
+  transition: 0.3s ease-in-out;
 }
 
 .SOC_buttons {
@@ -686,6 +734,10 @@ footer {
   margin: 122px 0 97px 0;
 }
 
+.EAT_hidden {
+  display: none;
+}
+
 .progress-bar {
   width: 858px;
   height: 3px;
@@ -700,6 +752,16 @@ footer {
   background-color: #5C45EA;
   border-radius: 4px;
   width: 20%;
+  transition: 0.3s all ease-in-out;
+}
+
+.progress_news {
+  height: 100%;
+  background-color: #5C45EA;
+  border-radius: 4px;
+  width: 15%;
+  margin-left: 24%;
+  transition: 0.3s all ease-in-out;
 }
 
 .events_and_news_text {
@@ -709,26 +771,37 @@ footer {
   margin: 0 0 5px 0;
 }
 
-.events_and_news_text p:nth-child(1) {
+.EAN_text_events {
   color: #5C45EA;
   font-family: Montserrat;
   font-size: 20px;
   font-weight: 700;
   line-height: 30px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
-.events_and_news_text p:nth-child(2) {
+.EAN_text_news {
   color: #000000;
   font-family: Montserrat;
   font-size: 20px;
   font-weight: 700;
   line-height: 30px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
-.div_events_block {
+.div_events_block,
+.div_news_block {
   display: flex;
+  /* Изменение на display: flex */
   width: 720px;
   justify-content: space-between;
+}
+
+.div_news_block.EAT_hidden {
+  display: none;
+  /* Оставить как есть */
 }
 
 .events_block {
@@ -829,45 +902,9 @@ footer {
   line-height: 35px;
 }
 
-textarea {
-  border: none;
-  resize: none;
-  width: 467px;
-  height: 256px;
-  border-radius: 4px;
-  background: #EBEBEB;
-  text-indent: 16px;
-  color: #5C545F;
-  font-family: Montserrat;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 30px;
-  padding: 16px 0 0 0;
-}
-
-textarea:focus {
-  outline: 2px solid #5C45EA;
-}
-
-textarea::-moz-placeholder {
-  color: #5C545F;
-  font-family: Montserrat;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 30px;
-}
-
-textarea::placeholder {
-  color: #5C545F;
-  font-family: Montserrat;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 30px;
-}
-
 .profile_textarea_button {
   background-color: #5C45EA;
-  padding: 13px 158px;
+  padding: 13px 125px;
   color: #FFF;
   font-size: 20px;
   font-family: Montserrat;
@@ -878,68 +915,318 @@ textarea::placeholder {
   transition: 0.3s ease-in-out;
 }
 
-.profile_textarea_button:hover {
-  transition: 0.3s ease-in-out;
-  background-color: #FFF;
-  color: #5C45EA;
-}
-
 /** Профиль конец **/
-/** Авторизация начало **/
-.block_auth {
-  margin: 288px 0 0 680px;
+/*помощь и поддержка начало*/
+.container_help {
+  max-width: 1106px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.block_reg {
-  margin: 188px 0 0 680px;
-}
-
-.input_form-email {
-  border: 2px solid #EBEBEB;
-  width: 484px;
-  height: 65px;
-  background: #EBEBEB;
-  padding: 0 15px 0 0;
-  color: #5C545F;
-  border-radius: 10px;
-  font-size: 20px;
+.help_title {
+  text-transform: uppercase;
+  color: #000;
   font-family: Montserrat;
-  text-indent: 20px;
-  transition: 0.3s all ease-in-out;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 64px 0 82px 0;
 }
 
-.div-input_form-email {
-  margin: 0 0 23px 0;
+.div_contacts_help {
+  min-width: 614px;
+  height: 310px;
+  border-radius: 4px;
+  box-shadow: 0 6px 10px 4px rgba(140, 128, 128, 0.25);
+  background: #fff;
+  padding: 33px 0 0 26px;
+  margin: 30px 0 0 0;
 }
 
-.input_form-email:hover {
-  border: 2px solid #5C45EA;
-  transition: 0.3s all ease-in-out;
+.div_contacts_help_section {
+  margin: 12px 0 117px 0;
+  display: flex;
+  width: 1106px;
+  justify-content: space-between;
 }
 
-.input_form-email:focus {
+.div_contacts_right {
+  justify-content: flex-end;
+}
+.div_contacts_right_title {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 24px;
+  color: #000;
+  width: 423px;
+  margin: 0 0 55px 0;
+}
+
+.div_answers_to_questions_help h2 {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 52px 0;
+}
+
+.answers_to_questions_help {
+  margin: 0 0 96px 0;
+}
+
+textarea {
+  border: 2px solid #EBEBEB;
+  resize: none;
+  width: 360px;
+  height: 135px;
+  border-radius: 10px;
+  background: #EBEBEB;
+  color: #5C545F;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 15px 0 15px;
+}
+
+textarea:focus {
   border: 2px solid #5C45EA;
   outline: none;
   background: #ffffff;
   transition: 0.3s all ease-in-out;
 }
 
-.input_form-email::-moz-placeholder {
+textarea:hover {
+  border: 2px solid #5C45EA;
+  transition: 0.3s all ease-in-out;
+}
+
+textarea::-moz-placeholder {
+  color: #5C545F;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+textarea::placeholder {
+  color: #5C545F;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+/*помощь и поддержка конец*/
+/*Документы начало*/
+.documents__title {
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 28px;
+  color: #000;
+  margin: 49px 0 45px 0;
+}
+.documents__pdf_btn {
+  font-family: Montserrat;
+  color: #FFF;
+  padding: 12px 0 12px 30px;
+  width: 394px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 10px;
+  background: #D64634;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+  border: none;
+}
+.documents__pdf_btn > svg {
+  margin-right: 30px;
+}
+.documents__pdf_btn_link {
+  text-decoration: none;
+  color: #FFF;
+}
+.documents__pdf_btn:hover {
+  background: #BB2D1A;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.documents__pdf_buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 861px;
+  margin: 0 auto;
+}
+.documents__request {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 24px;
+  color: #000;
+  text-align: center;
+  margin: 48px 0 47px 0;
+}
+.documents__request_reference {
+  margin: 0 0 0 733px;
+}
+
+.pdf_btn_margin_first svg {
+  margin-right: 30px;
+}
+
+.pdf_btn_margin_second svg {
+  margin-right: 77px;
+}
+
+.radio_document {
+  background-color: #EBEBEB;
+  padding: 19px 23px 26px 20px;
+  border-radius: 10px;
+  max-width: 351px;
+}
+
+.radio_input_doc {
+  margin: 15px 0;
+}
+
+/* Стилизация радиокнопок */
+input[type=radio] {
+  display: none;
+  /* Скрыть оригинальные радиокнопки */
+}
+
+/* Создание стилизованных радиокнопок */
+input[type=radio] + label {
+  position: relative;
+  padding-left: 30px;
+  /* Отступ для кастомной радиокнопки */
+  cursor: pointer;
+  font-family: Montserrat;
+  font-size: 14px;
+  color: #5C545F;
+}
+
+/* Стилизация кастомной радиокнопки */
+input[type=radio] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #9A9999;
+  /* Цвет рамки неотмеченной радиокнопки */
+  border-radius: 50%;
+  /* Для создания круглой формы */
+  background-color: #EBEBEB;
+}
+
+/* Стилизация отмеченной радиокнопки */
+input[type=radio]:checked + label::before {
+  background-color: #EBEBEB;
+  /* Цвет заливки отмеченной радиокнопки */
+}
+
+/* Создание отметки в центре кастомной радиокнопки */
+input[type=radio] + label::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background-color: #9A9999;
+  /* Цвет отметки радиокнопки */
+  display: none;
+  /* Скрыть отметку по умолчанию */
+}
+
+/* Отображение отметки при выборе радиокнопки */
+input[type=radio]:checked + label::after {
+  display: block;
+}
+
+label.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  font-family: Montserrat;
+  font-size: 14px;
+  color: #5C545F;
+  margin: 0 0 0 20px;
+}
+
+input.error {
+  border: 2px solid red;
+  /* стилизуем границу поля ввода в случае ошибки */
+}
+
+#documnets_request_form {
+  margin: 0 0 82px 0;
+}
+
+/*Документы конец*/
+/** Авторизация начало **/
+.block_auth {
+  margin: 0 0 0 744px;
+}
+
+.block_reg {
+  margin: 0 0 0 744px;
+}
+
+.input_form {
+  border: 2px solid #EBEBEB;
+  width: 375px;
+  height: 42px;
+  background: #EBEBEB;
+  padding: 0 15px 0 0;
+  color: #5C545F;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: Montserrat;
+  text-indent: 14px;
+  transition: 0.3s all ease-in-out;
+  margin: 4px 0 0 0;
+}
+
+.div_input {
+  margin: 0 0 13px 0;
+}
+
+.input_form:hover {
+  border: 2px solid #5C45EA;
+  transition: 0.3s all ease-in-out;
+}
+
+.input_form:focus {
+  border: 2px solid #5C45EA;
+  outline: none;
+  background: #ffffff;
+  transition: 0.3s all ease-in-out;
+}
+
+.input_form::-moz-placeholder {
   -moz-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out;
 }
 
-.input_form-email::placeholder {
+.input_form::placeholder {
   transition: 0.3s all ease-in-out;
 }
 
-.input_form-email:focus::-moz-placeholder {
+.input_form:focus::-moz-placeholder {
   color: transparent;
   -moz-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out;
 }
 
-.input_form-email:focus::placeholder {
+.input_form:focus::placeholder {
   color: transparent;
   transition: 0.3s all ease-in-out;
 }
@@ -949,27 +1236,60 @@ textarea::placeholder {
   position: absolute;
 }
 
+.index_auth__title {
+  margin: 300px 0 39px 0;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 75%;
+  color: #000;
+}
+
+.index_reg__title {
+  margin: 221px 0 39px 0;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 75%;
+  color: #000;
+}
+
+.reset_password__title {
+  margin: 270px auto 50px auto;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 28px;
+  color: #000;
+  width: 352px;
+}
+
+.form_reset_password {
+  margin: 0 0 0 743px;
+}
+
 .label_input_auth {
   font-family: Montserrat;
-  font-size: 16px;
+  font-size: 12px;
   color: #5C545F;
   font-weight: 500;
   margin: 0 0 0 10px;
 }
 
 .submit {
-  padding: 17px 218px;
+  padding: 15px 177px;
   color: #FFF;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 14px;
   border-radius: 10px;
   background: #5C45EA;
-  margin: 0 0 10px 0;
-  max-width: 503px;
+  margin: 15px 0 10px 0;
+  max-width: 394px;
   display: flex;
   justify-content: center;
   transition: 0.3s ease-in-out;
   border: none;
+  font-family: Montserrat;
 }
 
 .submit:hover {
@@ -985,30 +1305,52 @@ textarea::placeholder {
   margin-bottom: 10px;
   border: 1px solid #cc0000;
   border-radius: 5px;
-  width: 465px;
+  width: 374px;
   margin: 0 0 10px;
   text-align: center;
   font-family: Montserrat;
+  font-size: 14px;
+}
+
+.success-message {
+  background-color: #9CFBA5;
+  color: #2FA73A;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #2FA73A;
+  border-radius: 5px;
+  width: 374px;
+  margin: 0 0 10px;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 14px;
 }
 
 .h-captcha {
   display: flex;
   justify-content: center;
-  width: 503px;
+  width: 394px;
   margin: 0 0 20px 0;
 }
 
 .reset-pass-text {
-  font-size: 16px;
+  font-size: 12px;
   color: #5C545F;
   font-family: Montserrat;
-  margin: 0 0 0 14px;
   text-decoration: none;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 483px;
+  width: 394px;
+}
+
+.back_to_main {
+  margin: 25px 0 0 0;
+}
+
+.back_to_main > svg {
+  margin-right: 10px;
 }
 
 .reset-pass-text:hover {
@@ -2207,10 +2549,4 @@ textarea::placeholder {
 }
 .hidden {
   display: none;
-}
-
-.success-message {
-  font-family: Montserrat;
-  transition: 0.3s ease-in-out;
-  margin: 10px 0 0 10px;
 }/*# sourceMappingURL=main.css.map */
