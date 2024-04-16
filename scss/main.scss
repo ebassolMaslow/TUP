@@ -54,6 +54,10 @@ $black: #000;
     // border:1px solid red; box-sizing:border-box;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .container {
     max-width: 1157px;
     width: 100%;
@@ -124,10 +128,6 @@ header {
 
 .main-menu li:nth-child(5) {
     margin-right: 74px;
-}
-
-.main-menu li:nth-child(6) {
-    width: 100px;
 }
 
 // .main-menu li:nth-child(7) {
@@ -746,8 +746,6 @@ footer {
 
 }
 
-.SOC_buttons_div_item {}
-
 .SOC_buttons_div_item_link {
     text-decoration: none;
     color: #000;
@@ -912,92 +910,468 @@ footer {
 /** Профиль начало **/
 
 .profile {
-    margin: 63px 0 83px 0;
+
+    &__title {
+        font-family: Montserrat;
+        font-weight: 600;
+        font-size: 28px;
+        color: #000;
+        margin: 33px 0 31px 0;
+        text-align: center;
+    }
+
+    &__section {
+        margin: 0 0 89px 0;
+    }
+
+    &__container {
+        max-width: 1187px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__div_data {
+        display: flex;
+    }
+
+    &__photo {
+        border-radius: 4px;
+        width: 301px;
+        height: 362px;
+        box-shadow: 0 0 10px 4px rgba(140, 128, 128, 0.25);
+        background: #fff;
+        margin: 0 30px 30px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    &__photo::after {
+        content: "Обновить фотографию";
+        position: absolute;
+        bottom: -33px;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 0 10px 4px rgba(140, 128, 128, 0.25);
+        background: #fff;
+        color: #000;
+        padding: 14px 1px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-family: Montserrat;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+        width: 245px;
+    }
+
+    &__photo:hover::after {
+        opacity: 1;
+        /* изменяем прозрачность при наведении на изображение профиля */
+    }
+
+    &__img_photo_profile {
+        width: 245px;
+        height: 317px;
+        border-radius: 10px;
+    }
+
+    &__edit {
+        border-radius: 4px;
+        width: 301px;
+        height: 115px;
+        box-shadow: 0 0 10px 4px rgba(140, 128, 128, 0.25);
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__edit_title_text {
+        font-family: Montserrat;
+        font-weight: 600;
+        font-size: 18px;
+        text-align: center;
+        color: #000;
+    }
+
+    &__edit_btn {
+        padding: 14px 49px;
+        color: #FFF;
+        font-size: 14px;
+        border-radius: 10px;
+        background: #5C45EA;
+        margin: 15px 0 10px 0;
+        max-width: 235px;
+        display: flex;
+        justify-content: center;
+        transition: .3s ease-in-out;
+        border: none;
+        font-family: Montserrat;
+    }
+
+    &__edit_btn:hover {
+        background: #405E95;
+        transition: .3s ease-in-out;
+        cursor: pointer;
+    }
+
+    &__edit_btn_link {
+        font-family: Montserrat;
+        font-weight: 600;
+        font-size: 14px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    &__student_data {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__university_data {
+        border-radius: 4px;
+        width: 346px;
+        height: 250px;
+        box-shadow: 0 0 10px 4px rgba(140, 128, 128, 0.25);
+        background: #fff;
+        margin: 0 30px 30px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__university_data ul:nth-child(1) {
+        margin: 0 30px 0 0;
+    }
+
+    &__university_data_text_left {
+        font-family: Montserrat;
+        font-weight: 600;
+        font-size: 18px;
+        color: #000;
+        margin: 0 0 12px 0;
+    }
+
+    &__university_data_text_right {
+        font-family: Montserrat;
+        font-weight: 400;
+        font-size: 18px;
+        color: #000;
+        margin: 0 0 12px 0;
+        width: 106px;
+        overflow: hidden;
+    }
+
+    &__university_data_text_right:hover {
+        overflow: auto;
+        width: 106px;
+    }
+
+    @media (max-width: 240px) {
+        &__student_data_div_text_right:hover {
+            overflow: scroll;
+            /* Hide overflow when width is less than 240px */
+        }
+    }
+
+    &__student_data_div {
+        border-radius: 4px;
+        width: 450px;
+        max-height: 248px;
+        box-shadow: 0 0 10px 4px rgba(140, 128, 128, 0.25);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        padding: 0 0 0 30px;
+    }
+
+    &__student_data_div ul:nth-child(1) {
+        margin: 0 81px 0 0;
+    }
+
+    &__student_data_div_text_right {
+        font-family: Montserrat;
+        font-weight: 400;
+        font-size: 18px;
+        color: #000;
+        margin: 0 0 12px 0;
+        width: 240px;
+        overflow: hidden;
+    }
+
+    &__student_data_div_text_right:hover {
+        overflow: auto;
+        width: 240px;
+    }
+
+    @media (max-width: 240px) {
+        &__student_data_div_text_right:hover {
+            overflow: scroll;
+            /* Hide overflow when width is less than 240px */
+        }
+    }
+
+    &__password_div {
+        border-radius: 4px;
+        width: 346px;
+        height: 226px;
+        box-shadow: 0 0 10px 4px rgba(140, 128, 128, 0.25);
+        background: #fff;
+        margin: 0 30px 0 0;
+    }
+
+    &__password_div ul {
+        display: flex;
+        width: 222px;
+        justify-content: space-between;
+        margin: 30px 0 16px 30px;
+    }
+
+    &__forgot_password {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__forgot_password_text {
+        margin: 0 0 13px 0;
+    }
+
+    &__status_question_div {
+        border-radius: 4px;
+        width: 480px;
+        height: 226px;
+        box-shadow: 0 0 10px 4px rgba(140, 128, 128, 0.25);
+        background: #fff;
+    }
+
+    &__status_question_div ul {
+        display: flex;
+        width: 400px;
+        justify-content: center;
+        align-items: center;
+        margin: 24px 0 0 40px;
+    }
+
+    &__status_question_div ul li:nth-child(1) {
+        margin: 0 132px 0 0;
+    }
+
+    &__status_question_text {
+        margin: 21px 0 0 29px;
+    }
+
+    &__ul_answers {
+        display: flex;
+        margin: 0 0 15px 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: auto;
+        max-height: 60px;
+        overflow: scroll;
+        padding: 60px 0 0 0;
+    }
+
+    &__question_anser_body {
+        display: flex;
+    }
+
+    &__university_data_text {
+        font-family: Montserrat;
+        font-weight: 400;
+        font-size: 18px;
+        color: #000;
+        text-align: center;
+        margin: 20px 0 0 0;
+        cursor: pointer;
+    }
+
+    &__university_data_text_with_answer {
+        font-family: Montserrat;
+        font-weight: 400;
+        font-size: 18px;
+        color: $primary-color;
+        text-align: center;
+        margin: 20px 0 0 0;
+        cursor: pointer;
+    }
+
+    &__university_data_text_with_answer:hover {
+        text-decoration: underline;
+    }
+
+    &__ul_answers p:nth-child(1) {
+        margin: 20px 100px 0 0;
+    }
 }
 
-.profile_body {
-    display: flex;
+/* Стили для модального окна */
+.modal_update_photo {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* задаем полупрозрачный черный фон */
 }
 
-.profile_body_left {
-    width: 415px;
-    height: auto;
-    border-radius: 4px;
-    background: #EBEBEB;
-    padding: 33px 0 23px 52px;
-    margin: 0 150px 0 0;
+.modal_crop_photo {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* задаем полупрозрачный черный фон */
 }
 
-.profile_body_left_text {
-    width: 348px;
+.cropper-container {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* располагаем модальное окно по центру вертикально и горизонтально */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    max-width: 557px;
 }
 
-.profile_body_left_text:nth-child(1) {
-    color: #000;
-    font-family: Montserrat;
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* располагаем модальное окно по центру вертикально и горизонтально */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    max-width: 557px;
+}
+
+.modal_update_photo {
+
+    &__title {
+        font-family: Montserrat;
+        font-weight: 600;
+        font-size: 24px;
+        text-align: center;
+        color: #000;
+        margin: 20px 0 31px 0;
+    }
+
+    &__margin {
+        margin: 0 auto;
+    }
+
+    &__subtitle {
+        font-family: Montserrat;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        color: #000;
+        width: 400px;
+        margin-top: 17px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
     font-size: 28px;
-    font-weight: 700;
-    margin: 0 0 26px 0;
+    font-weight: bold;
 }
 
-.profile_body_left_text {
+.close:hover,
+.close:focus {
     color: #000;
-    font-family: Montserrat;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 30px;
-    margin: 0 0 5px 0;
-}
-
-.profile_body_left_text span {
-    font-weight: 600;
-}
-
-.profile_body_left_text:nth-child(9) {
-    color: #000;
-    font-family: Montserrat;
-    font-size: 28px;
-    font-weight: 700;
-    margin: 20px 0 0 0;
-}
-
-.profile_body_left button {
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 30px;
-    border: none;
-    width: 253px;
-    height: 47px;
-    border-radius: 4px;
-    background: #5C45EA;
-    margin: 17px 0 0 0;
-}
-
-.profile_body_right h1 {
-    margin: 72px 0 39px 0;
-    color: #000;
-    font-family: Montserrat;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 35px;
-}
-
-
-.profile_textarea_button {
-    background-color: #5C45EA;
-    padding: 13px 125px;
-    color: #FFF;
-    font-size: 20px;
-    font-family: Montserrat;
-    border-radius: 15px;
-    border: 2px solid #5C45EA;
-    margin: 20px 0 0 0;
+    text-decoration: none;
     cursor: pointer;
-    transition: .3s ease-in-out;
 }
 
+.close_second {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close_second:hover,
+.close_second:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cropped_img_profile {
+    width: 245px;
+    height: 317px;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: 0 auto;
+}
+
+.div_upload_new {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-file-upload {
+    padding: 15px 70px;
+    color: #FFF;
+    font-size: 14px;
+    border-radius: 10px;
+    background: #5C45EA;
+    margin: 18px auto 14px auto;
+    max-width: 237px;
+    display: flex;
+    justify-content: center;
+    transition: .3s ease-in-out;
+    border: none;
+    font-family: Montserrat;
+}
+
+.custom-file-upload:hover {
+    background: #405E95;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+
+.submit_upload {
+    padding: 15px 72px;
+    color: #FFF;
+    font-size: 14px;
+    border-radius: 10px;
+    background: #5C45EA;
+    margin: 0 auto;
+    max-width: 267px;
+    display: flex;
+    justify-content: center;
+    transition: .3s ease-in-out;
+    border: none;
+    font-family: Montserrat;
+}
+
+.submit_upload:hover {
+    background: #405E95;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
 
 /** Профиль конец **/
 
@@ -1424,6 +1798,22 @@ input.error {
     font-size: 14px;
 }
 
+.error-message {
+    background-color: #ffcccc;
+    color: #cc0000;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cc0000;
+    border-radius: 5px;
+    width: 374px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+}
+
 .success-message {
     background-color: #9CFBA5;
     color: #2FA73A;
@@ -1436,6 +1826,8 @@ input.error {
     text-align: center;
     font-family: Montserrat;
     font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .h-captcha {
@@ -1477,6 +1869,29 @@ input.error {
 
 /** админка начало **/
 
+.container_header_admin {
+    max-width: 830px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.questionText_block {
+    position: absolute;
+    background-color: #000;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    overflow: hidden;
+    white-space: normal;
+    height: auto;
+    box-shadow: 0 0 10px 5px rgba(140, 128, 128, 0.25);
+    background: #fff;
+    border-radius: 10px;
+    font-family: Montserrat;
+    display: none;
+    left: 40%;
+}
+
 .admin_table_row {
     display: flex;
     width: 600px;
@@ -1486,6 +1901,245 @@ input.error {
 
 .admin_text {
     margin: 40px 0 0 300px;
+}
+
+.container_admin {
+    max-width: 1350px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 1400px;
+}
+
+.profile_admin_top {
+    margin: 100px 0 100px 0;
+}
+
+th,
+td {
+    border: 2px solid #5C45EA;
+    padding: 8px;
+    text-align: center;
+}
+
+td {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000;
+}
+
+th {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+}
+
+.td_id {
+    max-width: 100px;
+    overflow: scroll;
+}
+
+.td_question {
+    max-width: 300px;
+    overflow: scroll;
+    height: 100px;
+}
+
+.td_email {
+    max-width: 238px;
+    overflow: scroll;
+}
+
+.td_submit {
+    border: none;
+}
+
+.td_padding {
+    padding: 0;
+}
+
+.exit_table {
+    margin-left: 83px;
+}
+
+.submit_table {
+    padding: 15px 20px;
+    color: #FFF;
+    font-size: 14px;
+    border-radius: 10px;
+    background: #5C45EA;
+    margin: 15px 0 10px 37px;
+    // width: 181px;
+    display: flex;
+    justify-content: center;
+    transition: .3s ease-in-out;
+    border: none;
+    font-family: Montserrat;
+    text-decoration: none;
+}
+
+.submit_table:hover {
+    background: #405E95;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.modal_answer {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-answer {
+    box-shadow: 0 0 10px 5px rgba(140, 128, 128, 0.25);
+    background: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+}
+
+#answerContent {
+    font-size: 16px;
+    font-family: Montserrat;
+}
+
+.close_answer {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close_answer:hover,
+.close_answer:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container_answer {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.textarea_answer {
+    width: 1370px;
+    border-radius: 0;
+    border: 2px solid $primary-color;
+    background: white;
+    height: 219px;
+}
+
+.profile_admin_margin {
+    margin: 200px 0 16px 0;
+}
+
+.submit_answer {
+    padding: 15px 520px;
+    color: #FFF;
+    font-size: 14px;
+    border-radius: 10px;
+    background: #5C45EA;
+    margin: 15px 0 10px 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    transition: .3s ease-in-out;
+    border: none;
+    font-family: Montserrat;
+}
+
+.submit_answer:hover {
+    background: #405E95;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.container_table_header {
+    max-width: 1350px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tables_title {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    color: #000;
+    margin: 58px 0 58px 0;
+}
+
+.role_table__form{
+    display: flex;
+    flex-direction: row;
+    width: 840px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submit_height{
+    max-height: 46px;
+}
+
+.table_top{
+    margin: 18px 0 100px 0;
+}
+
+.modal_update_table {
+
+    &__title {
+        font-family: Montserrat;
+        font-weight: 600;
+        font-size: 24px;
+        text-align: center;
+        color: #000;
+        margin: 20px 0 31px 0;
+    }
+
+    &__margin {
+        margin: 0 auto;
+    }
+
+    &__subtitle {
+        font-family: Montserrat;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        color: #000;
+        width: 400px;
+        margin-top: 17px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.modal_update_table {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* задаем полупрозрачный черный фон */
 }
 
 /** админка конец **/
@@ -1517,6 +2171,80 @@ input.error {
 }
 
 /** 404 конец **/
+
+
+
+/** Профиль редактирование начало **/
+
+.profile_edit {
+
+    &__container {
+        max-width: 1149px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-family: Montserrat;
+        font-weight: 500;
+        font-size: 40px;
+        color: #000;
+        text-align: center;
+        margin: 211px 0 53px 0;
+    }
+
+}
+
+.submit_profile_edit {
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile_edit_div {
+    width: 819px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.margin_auto_wo_top {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.margin_auto {
+    margin: 0 auto;
+}
+
+.f {
+    display: none;
+}
+
+/** Профиль редактирование конец **/
+
+
+/** Админка начало **/
+
+.admin_path {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: Montserrat;
+    margin: 0 0 30px 0;
+    color: #2FA73A;
+    font-weight: 500;
+}
+
+.admin_path:hover {
+    text-decoration: underline;
+}
+
+/** Админка  конец **/
+
 
 /******************/
 /*                */

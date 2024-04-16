@@ -19,6 +19,48 @@ $qInfoUser = "SELECT * FROM user WHERE id_user='$IDuser'";
 addslashes($qInfoUser);
 $resInfoUser = mysqli_query($connect, $qInfoUser) or die(mysqli_error($connect));
 $InfoUser = mysqli_fetch_object($resInfoUser);
+
+if (isset($IDuser)) {
+    $query_access = "SELECT * FROM `user`, `role` role WHERE id_user = '$IDuser' AND user.id_role = role.id_role";
+    addslashes($query_access);
+    $res_access = mysqli_query($connect, $query_access);
+    $row_access = mysqli_fetch_object($res_access);
+    $roles = $row_access->name_role;
+} else {
+    $_SESSION['message'] = 'Доступ закрыт для неавторизованных пользователях!';
+    header("location: ./index-auth.php");
+}
+
+// Обработка отправленной формы
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Проверка наличия файла и его загрузки
+    if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
+        $file_tmp = $_FILES['photo']['tmp_name'];
+        $file_name = $_FILES['photo']['name'];
+        // Создание уникального имени файла
+        $new_file_name = uniqid() . "_" . $file_name;
+        // Папка для сохранения фотографии
+        $upload_dir = "./profile_images/";
+        // Удаление предыдущей фотографии пользователя
+        $existing_photo = $InfoUser->profile_photo;
+        if ($existing_photo !== null && file_exists($upload_dir . $existing_photo)) {
+            unlink($upload_dir . $existing_photo);
+        }
+        // Сохранение фотографии на сервере
+        move_uploaded_file($file_tmp, $upload_dir . $new_file_name);
+        // Обновление поля profile_photo в таблице user
+        $sql = "UPDATE user SET profile_photo = '$new_file_name' WHERE id_user = '$IDuser'";
+        if ($connect->query($sql) === TRUE) {
+            // Перенаправление на страницу профиля
+            header("Location: ./profile.php");
+            exit(); // Убедитесь, что дальнейшее выполнение скрипта прекращено
+        } else {
+            echo "Ошибка: " . $sql . "<br>" . $connect->error;
+        }
+    } else {
+        echo "Ошибка при загрузке файла";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +70,7 @@ $InfoUser = mysqli_fetch_object($resInfoUser);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="scss/main.css">
-    <title>Профиль студента</title>
+    <title>Профиль студента | Технологический университет программирования</title>
     <link rel="shortcut icon" href="./images/svg/shortcut_icon.svg" type="image/svg">
     <meta name="robots" content="noindex">
 </head>
@@ -92,39 +134,195 @@ $InfoUser = mysqli_fetch_object($resInfoUser);
         </div>
     </header>
 
-    <section class="profile">
-        <div class="container_students">
-            <div class="profile_body">
-                <div class="profile_body_left">
-                    <p class="profile_body_left_text">Ваши данные</p>
-                    <p class="profile_body_left_text"><span>Фамилия:</span> <?php echo "" . $InfoUser->surname . ""; ?></p>
-                    <p class="profile_body_left_text"><span>Отчество:</span> <?php echo "" . $InfoUser->uname . ""; ?></p>
-                    <p class="profile_body_left_text"><span>Имя:</span> <?php echo "" . $InfoUser->middlename . ""; ?></p>
-                    <p class="profile_body_left_text"><span>Группа:</span> <?php echo "" . $InfoUser->ugroup . ""; ?></p>
-                    <p class="profile_body_left_text"><span>Специальность:</span> <?php echo "" . $InfoUser->specialization . ""; ?></p>
-                    <p class="profile_body_left_text"><span>Серия и номер:</span> <?php echo "" . $InfoUser->passport . ""; ?></p>
-                    <p class="profile_body_left_text"><span>Адрес проживания:</span> <?php echo "" . $InfoUser->address . ""; ?></p>
-                    <p class="profile_body_left_text">Данные изменились?</p>
-                    <button>Изменить данные</button>
+    <h1 class="profile__title">Ваши данные</h1>
+
+    <?php
+    if (isset($roles)) {
+        if ($roles == 'Администратор') {
+            echo "<a class=\"admin_path\" href='./admin/profile_admin.php'>Войти в административную панель</a>";
+        }
+    }
+    ?>
+
+    <section class="profile__section">
+        <div class="profile__container">
+            <div class="profile__div_data">
+                <div class="profile__photo_and_edit">
+                    <div class="profile__photo">
+                        <a class="profile__img_photo_profile"><img class="profile__img_photo_profile" src="./profile_images/<?php echo $InfoUser->profile_photo . '?' . rand(); ?>"></a>
+                    </div>
+                    <div class="profile__edit">
+                        <h2 class="profile__edit_title_text">Данные изменились?</h2>
+                        <button class="profile__edit_btn"><a href="./profile_edit.php" class="profile__edit_btn_link">Изменить данные</a></button>
+                    </div>
                 </div>
-                <div class="profile_body_right">
-                    <h1>Есть вопрос? Сотрудник ответит вам в течение 24 лет</h1>
-                    <form action="./php_handler/add_question.php" method="post">
-                        <textarea name="question_text" placeholder="Введите ваш вопрос" cols="30" rows="10" maxlength="850"></textarea>
-                        <input type="hidden" name="id_user" value="<?php echo $InfoUser->id_user; ?>">
-                        <input class="profile_textarea_button" type="submit" value="Задать вопрос">
-                    </form>
-                    <?php
-                    session_start();
-                    if (isset($_SESSION['success_message'])) {
-                        echo "<div class='success-message'>" . $_SESSION['success_message'] . "</div>";
-                        unset($_SESSION['success_message']); // Удаление сообщения после его показа
-                    }
-                    if (isset($_SESSION['error_message'])) {
-                        echo "<div class='error-message'>" . $_SESSION['error_message'] . "</div>";
-                        unset($_SESSION['error_message']); // Удаление сообщения после его показа
-                    }
-                    ?>
+                <div class="profile__student_data">
+                    <div class="profile__university_data">
+                        <ul>
+                            <li>
+                                <p class="profile__university_data_text_left">Должность</p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_left">Группа</p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_left">Квалификация</p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_left">Специальность</p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_left">Курс</p>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <p class="profile__university_data_text_right"><?php echo isset($InfoUser->job_title) ? $InfoUser->job_title : "Нет_данных"; ?></p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_right"><?php echo isset($InfoUser->ugroup) ? $InfoUser->ugroup : "Нет_данных"; ?></p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_right"><?php echo isset($InfoUser->qualification) ? $InfoUser->qualification : "Нет_данных"; ?></p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_right"><?php echo isset($InfoUser->specialization) ? $InfoUser->specialization : "Нет_данных"; ?></p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_right"><?php echo isset($InfoUser->course) ? $InfoUser->course : "Нет_данных"; ?></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="profile__student_data_div">
+                        <ul>
+                            <li>
+                                <p class="profile__university_data_text_left">Логин</p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_left">Email</p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_left">Телефон</p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_left">Фамилия</p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_left">Имя</p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_left">Отчетство</p>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <p class="profile__student_data_div_text_right"><?php echo isset($InfoUser->login) ? $InfoUser->login : "Нет_данных"; ?></p>
+                            </li>
+                            <li>
+                                <p class="profile__student_data_div_text_right"><?php echo isset($InfoUser->email) ? $InfoUser->email : "Нет_данных"; ?></p>
+                            </li>
+                            <li>
+                                <p class="profile__student_data_div_text_right"><?php echo isset($InfoUser->telephone) ? $InfoUser->telephone : "Нет_данных"; ?></p>
+                            </li>
+                            <li>
+                                <p class="profile__student_data_div_text_right"><?php echo isset($InfoUser->surname) ? $InfoUser->surname : "Нет_данных"; ?></p>
+                            </li>
+                            <li>
+                                <p class="profile__student_data_div_text_right"><?php echo isset($InfoUser->uname) ? $InfoUser->uname : "Нет_данных"; ?></p>
+                            </li>
+                            <li>
+                                <p class="profile__student_data_div_text_right"><?php echo isset($InfoUser->middlename) ? $InfoUser->middlename : "Нет_данных"; ?></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="profile__password_div">
+                        <ul>
+                            <li>
+                                <p class="profile__university_data_text_left">Пароль</p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_right">************</p>
+                            </li>
+                        </ul>
+                        <div class="profile__forgot_password">
+                            <p class="profile__forgot_password_text profile__edit_title_text">Забыли пароль?</p>
+                            <button class="profile__edit_btn "><a href="./reset_password.php" class="profile__edit_btn_link">Сменить пароль</a></button>
+                        </div>
+                    </div>
+                    <div class="profile__status_question_div">
+                        <p class="profile__university_data_text_left profile__status_question_text">Статус ваших вопросов</p>
+                        <ul>
+                            <li>
+                                <p class="profile__university_data_text_left">Вопросы</p>
+                            </li>
+                            <li>
+                                <p class="profile__university_data_text_left">Статус ответа</p>
+                            </li>
+                        </ul>
+                        <div class="profile__ul_answers">
+                            <!-- <p class="profile__university_data_text">Вопрос 1</p>
+                            <p class="profile__university_data_text">Ожидается ответ</p> -->
+                            <?php
+                            $qInfoFavorite = "SELECT * FROM question, user WHERE question.id_user = user.id_user AND user.id_user = {$_SESSION['id_user']}";
+                            addslashes($qInfoFavorite);
+                            $resInfoFavorite = mysqli_query($connect, $qInfoFavorite) or die(mysqli_error($connect));
+                            while ($InfoFavorite = mysqli_fetch_object($resInfoFavorite)) {
+                                echo "<div class=\"profile__question_anser_body\" onmouseover=\"showText(this,'$InfoFavorite->question_text')\" onmouseout=\"hideText(this)\">";
+                                echo "<p class=\"profile__university_data_text\">Вопрос $InfoFavorite->id_question</p>";
+
+                                // Проверяем значение question_status
+                                if ($InfoFavorite->question_status === 'Посмотреть ответ') {
+                                    echo "<a class=\"profile__university_data_text_with_answer\" onclick=\"showAnswer('$InfoFavorite->id_question')\">$InfoFavorite->question_status</a>";
+                                } else {
+                                    echo "<p class=\"profile__university_data_text\">$InfoFavorite->question_status</p>";
+                                }
+
+                                echo "</div>";
+                            }
+
+                            ?>
+
+                            <div class="questionText_block" id="questionText"></div>
+
+                            <div class="modal_answer" id="answerModal">
+                                <div class="modal-content-answer">
+                                    <span class="close_answer" onclick="closeModal()">&times;</span>
+                                    <div id="answerContent"></div>
+                                </div>
+                            </div>
+
+                            <script>
+                                function showText(element, text) {
+                                    document.getElementById('questionText').innerHTML = text;
+                                    document.getElementById('questionText').style.display = 'block';
+                                }
+
+                                function hideText(element) {
+                                    document.getElementById('questionText').innerHTML = '';
+                                    document.getElementById('questionText').style.display = 'none';
+                                }
+
+                                function showAnswer(questionId) {
+                                    // Отправляем AJAX-запрос на сервер для получения ответа по ID вопроса
+                                    var xhr = new XMLHttpRequest();
+                                    xhr.onreadystatechange = function() {
+                                        if (xhr.readyState === 4 && xhr.status === 200) {
+                                            var answerText = xhr.responseText;
+                                            document.getElementById('answerContent').innerHTML = answerText;
+                                            document.getElementById('answerModal').style.display = 'block';
+                                        }
+                                    };
+                                    xhr.open('GET', './php_handler/get_answer.php?questionId=' + questionId, true);
+                                    xhr.send();
+                                }
+
+                                function closeModal() {
+                                    document.getElementById('answerContent').innerHTML = '';
+                                    document.getElementById('answerModal').style.display = 'none';
+                                }
+                            </script>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -142,7 +340,7 @@ $InfoUser = mysqli_fetch_object($resInfoUser);
                     <p>+7 485 917 95 27, +7 977 428 63 33 - <span>Деканат</span></p>
                     <p>+7 977 488 63 70 - <span>Приёмная комиссия</span></p>
                     <div class="socials">
-                    <a href="https://vk.com" target="_blank"><img src="./images/svg/vk70px.svg" alt="вк" class="social_img"></a>
+                        <a href="https://vk.com" target="_blank"><img src="./images/svg/vk70px.svg" alt="вк" class="social_img"></a>
                         <a href="https://t.me/Telegram" target="_blank"><img src="./images/svg/tg70px.svg" alt="телеграмм" class="social_img"></a>
                         <a href="https://web.whatsapp.com" target="_blank"><img src="./images/svg/whatsapp70px.svg" alt="вассап" class="social_img"></a>
                     </div>
@@ -151,7 +349,24 @@ $InfoUser = mysqli_fetch_object($resInfoUser);
         </div>
     </footer>
 
+    <form method="post" enctype="multipart/form-data" class="modal_update_photo" id="modal_update_photo">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="modal_update_photo__title">Загрузка новой фотографии</p>
+            <div class="div_upload_new">
+                <img id="uploadedImage" class="cropped_img_profile" />
+                <label for="photoUpload" class="custom-file-upload">
+                    Выберите файл
+                </label>
+                <input type="file" name="photo" id="photoUpload" accept="image/*" style="display: none;">
+
+                <input type="submit" value="Обновить фото" class="submit_upload" />
+            </div>
+            <p class="modal_update_photo__subtitle">Если у вас возникают проблемы с загрузкой, попробуйте выбрать фотографию меньшего размера.</p>
+        </div>
+    </form>
     <script src="./js/ham_menu.js"></script>
+    <script src="./js/modal_update_photo.js"></script>
 
 </body>
 
