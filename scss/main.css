@@ -1163,6 +1163,10 @@ footer {
   margin-right: auto;
 }
 
+.margin_top_q {
+  margin-top: 90px;
+}
+
 .close {
   color: #aaaaaa;
   float: right;
@@ -1977,6 +1981,74 @@ th {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   /* задаем полупрозрачный черный фон */
+}
+
+.add_table_title {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 28px;
+  margin: 20px 0 20px 10px;
+}
+
+.ca_margin {
+  margin: 0 0 80px 0;
+}
+
+.del_btn > a > svg > path {
+  fill: #C31010;
+  transition: 0.3s all ease-in-out;
+}
+
+.del_btn > a > svg > path:hover {
+  fill: #851c1c;
+  transition: 0.3s all ease-in-out;
+}
+
+.edit_btn > svg > path {
+  stroke: #000000;
+  transition: 0.3s all ease-in-out;
+}
+
+.edit_btn > svg > path:hover {
+  stroke: #444444;
+  transition: 0.3s all ease-in-out;
+  cursor: pointer;
+}
+
+#role_table__form_edit {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#user_table__form {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.table_user_scroll {
+  width: 1400px;
+  border: 8px solid #5C45EA;
+  overflow: scroll;
+  display: block;
+}
+
+.select_role {
+  border: 2px solid #EBEBEB;
+  width: 394px;
+  height: 50px;
+  background: #EBEBEB;
+  padding: 0 15px 0 0;
+  color: #5C545F;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: Montserrat;
+  text-indent: 14px;
+  transition: 0.3s all ease-in-out;
+  margin: 4px 0 0 0;
 }
 
 /** админка конец **/
