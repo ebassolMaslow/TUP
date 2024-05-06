@@ -41,6 +41,14 @@ if (isset($_SESSION['id_user'])) {
                             echo "<p class=\"error_message_text\">{$_SESSION['message']}</p>";
                             unset($_SESSION['message']);
                         }
+                        if (isset($_SESSION['success_message'])) {
+                            echo "<div class='success-message'>" . $_SESSION['success_message'] . "</div>";
+                            unset($_SESSION['success_message']); // Удаление сообщения после его показа
+                        }
+                        if (isset($_SESSION['error_message'])) {
+                            echo "<div class='error-message'>" . $_SESSION['error_message'] . "</div>";
+                            unset($_SESSION['error_message']); // Удаление сообщения после его показа
+                        }
                         ?>
                     </div>
                     <div class="email-and-password">

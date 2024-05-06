@@ -53,7 +53,7 @@ $InfoUser = mysqli_fetch_object($resInfoUser);
                 <div class="div_input_div">
                     <label class="label_input_auth">Почта</label>
                     <div class="div_input">
-                        <input type="email" class="input_form" name="email" placeholder="ivanov@mail.ru" autocomplete="off" required="required" minlength="4" maxlength="100" value="<?php echo "" . $InfoUser->email . ""; ?>">
+                        <input type="email" class="input_form" name="email" placeholder="ivanov@mail.ru" autocomplete="off" required="required" minlength="4" maxlength="80" value="<?php echo "" . $InfoUser->email . ""; ?>">
                     </div>
                 </div>
                 <div class="div_input_div">
@@ -65,13 +65,20 @@ $InfoUser = mysqli_fetch_object($resInfoUser);
                 <div class="div_input_div">
                     <label class="label_input_auth">Телефон</label>
                     <div class="div_input">
-                        <input type="text" class="input_form" name="telephone" placeholder="8 (903) 555-55-55" autocomplete="off" required="required" minlength="4" maxlength="50" value="<?php echo "" . $InfoUser->telephone . ""; ?>">
+                        <input type="text" class="input_form" id="phone" name="telephone" placeholder="8 (903) 555-55-55" autocomplete="off" required="required" minlength="4" maxlength="50" value="<?php echo "" . $InfoUser->telephone . ""; ?>">
                     </div>
                 </div>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+                <script>
+                    $(document).ready(function() {
+                        $('#phone').mask("+7 (999) 999-99-99");
+                    });
+                </script>
                 <div class="div_input_div">
                     <label class="label_input_auth">Специальность</label>
                     <div class="div_input">
-                        <input type="text" class="input_form" name="specialization" placeholder="Ваша специальность, например 09.09.09" autocomplete="off" required="required" minlength="4" maxlength="50" value="<?php echo "" . $InfoUser->specialization . ""; ?>">
+                        <input type="text" class="input_form" name="specialization" placeholder="Ваша специальность, например 09.09.09" autocomplete="off" required="required" minlength="4" maxlength="10" value="<?php echo "" . $InfoUser->specialization . ""; ?>">
                     </div>
                 </div>
                 <div class="div_input_div">

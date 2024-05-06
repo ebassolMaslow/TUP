@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = mysqli_query($connect, $updatePasswordQuery);
 
             if ($result) {
-                $_SESSION['message'] = 'Пароль успешно изменен';
+                $_SESSION['success_message'] = 'Пароль успешно изменен';
                 header("location: ../index_auth.php");
                 exit();
             } else {

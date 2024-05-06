@@ -592,6 +592,11 @@ footer {
     transition: .3s ease-in-out;
 }
 
+.footer_left button a{
+    text-decoration: none;
+    color: $black;
+}
+
 .footer_left button:hover {
     background: #f2f2f2;
     transition: .3s ease-in-out;
@@ -1802,6 +1807,8 @@ input.error {
     font-size: 14px;
 }
 
+
+
 .error-message {
     background-color: #ffcccc;
     color: #cc0000;
@@ -1817,7 +1824,9 @@ input.error {
     font-family: Montserrat;
     font-size: 14px;
 }
-
+.error_message{
+    width: 394px;
+}
 .success-message {
     background-color: #9CFBA5;
     color: #2FA73A;
@@ -2226,11 +2235,11 @@ th {
 /** 404 начало **/
 
 .title404-div {
-    margin: 350px 0 0 0;
+    margin: 370px 0 0 0;
 }
 
 .title404 {
-    font-size: 36px;
+    font-size: 32px;
     font-family: Montserrat;
     font-weight: 600;
     text-align: center;
@@ -2238,7 +2247,7 @@ th {
 }
 
 .subtitle404 {
-    font-size: 24px;
+    font-size: 22px;
     font-family: Montserrat;
     font-weight: 400;
     text-align: center;
@@ -2246,6 +2255,13 @@ th {
     color: #5C545F;
     display: block;
     margin: 0 auto;
+    transition: .15s all ease-in-out;
+}
+
+.subtitle404:hover{
+    color: $primary-color;
+    transition: .15s all ease-in-out;
+    text-decoration: underline;
 }
 
 /** 404 конец **/

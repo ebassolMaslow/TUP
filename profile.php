@@ -143,7 +143,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
     ?>
-
+    <?php
+    session_start();
+    if (isset($_SESSION['success_message'])) {
+        echo "<div class='success-message'>" . $_SESSION['success_message'] . "</div>";
+        unset($_SESSION['success_message']); // Удаление сообщения после его показа
+    }
+    if (isset($_SESSION['error_message'])) {
+        echo "<div class='error-message'>" . $_SESSION['error_message'] . "</div>";
+        unset($_SESSION['error_message']); // Удаление сообщения после его показа
+    }
+    ?>
     <section class="profile__section">
         <div class="profile__container">
             <div class="profile__div_data">
@@ -333,7 +343,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="div_footer">
                 <div class="footer_left">
                     <h4>Остались вопросы? Задавайте</h4>
-                    <button>задать вопрос</button>
+                    <button><a href="./help_and_support.php">задать вопрос</a></button>
                     <p>ТУП - Технологический Университет Программирования</p>
                 </div>
                 <div class="footer_right">

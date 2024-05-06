@@ -168,9 +168,16 @@ if (isset($_GET['id_user'])) {
             <div class="div_input_div">
                 <label class="label_input_auth">Телефон</label>
                 <div class="div_input">
-                    <input type="text" class="input_form" name="telephone" placeholder="8 (903) 555-55-55" autocomplete="off" minlength="4" maxlength="11">
+                    <input type="text" id="phone" class="input_form" name="telephone" placeholder="8 (903) 555-55-55" autocomplete="off" minlength="4" maxlength="11">
                 </div>
             </div>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('#phone').mask("+7 (999) 999-99-99");
+                });
+            </script>
             <div class="div_input_div">
                 <label class="label_input_auth">Должность</label>
                 <div class="div_input">
@@ -322,9 +329,16 @@ if (isset($_GET['id_user'])) {
             <div class="div_input_div">
                 <label class="label_input_auth">Телефон</label>
                 <div class="div_input">
-                    <input type="text" class="input_form" name="telephone" placeholder="8 (903) 555-55-55" autocomplete="off" minlength="4" maxlength="11">
+                    <input type="text" id="phone_edit" class="input_form" name="telephone" placeholder="8 (903) 555-55-55" autocomplete="off" minlength="4" maxlength="11">
                 </div>
             </div>
+            <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script> -->
+            <script>
+                $(document).ready(function() {
+                    $('#phone_edit').mask("+7 (999) 999-99-99");
+                });
+            </script>
             <div class="div_input_div">
                 <label class="label_input_auth">Должность</label>
                 <div class="div_input">

@@ -16,7 +16,7 @@
             <?php
             session_start();
             if (isset($_SESSION['message'])) {
-                echo "<p class=\"error_message_text\">{$_SESSION['message']}</p>";
+                echo "<p class=\"success-message\">{$_SESSION['message']}</p>";
                 unset($_SESSION['message']);
             }
             ?>

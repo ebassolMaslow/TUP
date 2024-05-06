@@ -236,7 +236,7 @@ $InfoUser = mysqli_fetch_object($resInfoUser);
             <div class="div_footer">
                 <div class="footer_left">
                     <h4>Остались вопросы? Задавайте</h4>
-                    <button>задать вопрос</button>
+                    <button><a href="./help_and_support.php">задать вопрос</a></button>
                     <p>ТУП - Технологический Университет Программирования</p>
                 </div>
                 <div class="footer_right">
