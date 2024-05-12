@@ -90,13 +90,25 @@ if (isset($_SESSION['id_user'])) {
         <h1 class="hero_title">информация для первокурссников</h1>
     </div>
 
+    <?php
+    session_start();
+    if (isset($_SESSION['success_message'])) {
+        echo "<div class='success-message'>" . $_SESSION['success_message'] . "</div>";
+        unset($_SESSION['success_message']); // Удаление сообщения после его показа
+    }
+    if (isset($_SESSION['error_message'])) {
+        echo "<div class='error-message'>" . $_SESSION['error_message'] . "</div>";
+        unset($_SESSION['error_message']); // Удаление сообщения после его показа
+    }
+    ?>
+
     <section class="hero-image">
         <div class="container">
             <div class="hero_div">
                 <div class="sidebar">
                     <ul>
                         <li><a class="sidebar_element_1440px" href="#section1">Расписание начала учебного года</a></li>
-                        <li><a class="sidebar_element_1440px" href="#section2">помощь для первокурсников</a></li>
+                        <li><a class="sidebar_element_1440px" href="#section2">Помощь для первокурсников</a></li>
                         <li><a class="sidebar_element_1440px" href="#section3">Контакты деканата</a></li>
                         <li><a class="sidebar_icon" href="#section1"><img src="./images/svg/timetable_sidebar.svg" alt="расписание меню слева"></a></li>
                         <li><a class="sidebar_icon" href="#section2"><img src="./images/svg/question_sidebar.svg" alt="вопрос меню слева"></a></li>

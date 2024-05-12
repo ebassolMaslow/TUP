@@ -10,7 +10,6 @@ if (isset($_SESSION['id_user'])) {
     }
 }
 
-
 // Получение данных из формы
 $email = $_POST['email'];
 $surname_docs = $_POST['surname_docs'];

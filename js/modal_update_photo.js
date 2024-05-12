@@ -30,5 +30,3 @@ document.getElementById('photoUpload').addEventListener('change', function() {
     reader.readAsDataURL(file);
   }
 });
-
- 

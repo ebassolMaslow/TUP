@@ -16,4 +16,3 @@ if ($row = mysqli_fetch_assoc($resGetAnswer)) {
 } else {
   echo 'Ответ не найден';
 }
-?>

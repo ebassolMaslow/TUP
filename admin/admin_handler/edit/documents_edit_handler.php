@@ -20,14 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $document_type = $_POST['document_type'];
     $id_user = $_POST['id_user'];
 
-    // if (
-    //     empty($id_user) || empty($login) || empty($email) ||  empty($name_role)
-    // ) {
-    //     $_SESSION['error_message'] = 'Пожалуйста, заполните все обязательные поля.';
-    //     header("location: ../../documents_table.php");
-    //     exit;
-    // }
-
     $queryTrack = "UPDATE `documents` SET `email` = '$email', `surname` = '$surname', `uname` = '$uname', `middlename` = '$middlename',`birthday` = '$birthday', 
     `ugroup` = '$ugroup', `document_type` = '$document_type', `id_user` = '$id_user' WHERE `id_documents` = '$id_documents'";
 

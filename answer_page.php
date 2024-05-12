@@ -21,7 +21,7 @@ include "./php_connect/connect.php";
         if (isset($_GET['id'])) {
             $questionId = $_GET['id'];
 
-            // Получите информацию о вопросе из базы данных
+            // Получение информацию о вопросе из базы данных
             $query = "SELECT question.*, user.login, question.email, question.qtime
               FROM question 
               JOIN user ON question.id_user = user.id_user

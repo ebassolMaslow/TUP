@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $checkTokenQuery = "SELECT id_user, password FROM user WHERE reset_token = '$token' AND reset_requested_at > DATE_SUB(NOW(), INTERVAL 1 DAY)";
         $tokenResult = mysqli_query($connect, $checkTokenQuery);
-        
+
         if ($tokenResult && mysqli_num_rows($tokenResult) > 0) {
             $row = mysqli_fetch_assoc($tokenResult);
             $userID = $row['id_user'];
@@ -48,4 +48,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
-?>

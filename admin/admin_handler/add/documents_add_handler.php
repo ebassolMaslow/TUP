@@ -11,6 +11,21 @@ if (isset($_SESSION['id_user'])) {
     }
 }
 
+if (isset($IDuser)) {
+    $query_access = "SELECT * FROM user, role WHERE id_user = '$IDuser' AND user.id_role = role.id_role";
+    addslashes($query_access);
+    $res_access = mysqli_query($connect, $query_access);
+    $row_access = mysqli_fetch_object($res_access);
+
+    $role_name = $row_access->name_role;
+
+    if ($role_name !== 'Администратор') {
+        $_SESSION['error_message'] = 'Доступ есть только у администраторов';
+        header("location: ../../../index.php");
+        exit();
+    }
+}
+
 // Получение данных из формы
 $email = $_POST['email'];
 $surname_docs = $_POST['surname'];

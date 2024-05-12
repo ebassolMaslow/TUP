@@ -15,17 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Заполняем плейсхолдер для id_role
             idRolePlaceholder.textContent = idRole;
-
-            // Теперь можно загрузить данные для редактирования этой записи AJAX'ом
-            // и заполнить input для name_role данными из базы данных
-
-            // Например:
-            // fetch('get_role_data.php?id_role=' + idRole)
-            //     .then(response => response.json())
-            //     .then(data => {
-            //         nameRoleInput.value = data.name_role;
-            //     })
-            //     .catch(error => console.error('Error:', error));
         });
     });
 
