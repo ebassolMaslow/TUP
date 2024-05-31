@@ -10,7 +10,7 @@ if (isset($_SESSION['id_user'])) {
         unset($IDuser);
     }
 }
-
+// echo $IDuser; // Вывод SQL-запроса для отладки
 ?>
 
 <!DOCTYPE html>

@@ -360,7 +360,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </footer>
 
     <form method="post" enctype="multipart/form-data" class="modal_update_photo" id="modal_update_photo">
-        <div class="modal-content">
+        <div class="modal-content-photo ">
             <span class="close">&times;</span>
             <p class="modal_update_photo__title">Загрузка новой фотографии</p>
             <div class="div_upload_new">

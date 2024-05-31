@@ -106,23 +106,22 @@ $InfoUser = mysqli_fetch_object($resInfoUser);
             </div>
         </div>
     </div>
-
+    <?php
+    session_start();
+    if (isset($_SESSION['success_message'])) {
+        echo "<div class='success-message'>" . $_SESSION['success_message'] . "</div>";
+        unset($_SESSION['success_message']); // Удаление сообщения после его показа
+    }
+    if (isset($_SESSION['error_message'])) {
+        echo "<div class='error-message'>" . $_SESSION['error_message'] . "</div>";
+        unset($_SESSION['error_message']); // Удаление сообщения после его показа
+    }
+    ?>
     <h2 class="documents__request">Заказ справок</h2>
     <section class="documents__request_reference">
         <div class="container">
             <div class="documents__div_request_reference">
                 <form action="./php_handler/documents_request_form_handler.php" onsubmit="return validateForm()" class="documnets_request_form" method="post" id="documnets_request_form">
-                    <?php
-                    session_start();
-                    if (isset($_SESSION['success_message'])) {
-                        echo "<div class='success-message'>" . $_SESSION['success_message'] . "</div>";
-                        unset($_SESSION['success_message']); // Удаление сообщения после его показа
-                    }
-                    if (isset($_SESSION['error_message'])) {
-                        echo "<div class='error-message'>" . $_SESSION['error_message'] . "</div>";
-                        unset($_SESSION['error_message']); // Удаление сообщения после его показа
-                    }
-                    ?>
                     <label class="label_input_auth">Почта</label>
                     <div class="div_input">
                         <input type="email" class="input_form" name="email" id="email" placeholder="ivanov@mail.ru" autocomplete="off" required="required" minlength="4" maxlength="50">

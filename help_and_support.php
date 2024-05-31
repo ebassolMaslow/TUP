@@ -134,7 +134,6 @@ $InfoUser = mysqli_fetch_object($resInfoUser);
             </div>
         </div>
     </div>
-
     
     <section class="answers_to_questions_help">
         <div class="container">

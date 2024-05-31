@@ -1265,6 +1265,16 @@ footer {
     max-width: 557px;
 }
 
+.modal-content-photo {
+    background-color: #fefefe;
+    margin: 9% auto;
+    /* располагаем модальное окно по центру вертикально и горизонтально */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    max-width: 557px;
+}
 .modal_update_photo {
 
     &__title {
@@ -1835,12 +1845,12 @@ input.error {
     border: 1px solid #2FA73A;
     border-radius: 5px;
     width: 374px;
-    margin: 0 0 10px;
+    margin-bottom: 10px;
     text-align: center;
     font-family: Montserrat;
     font-size: 14px;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
 }
 
 .h-captcha {

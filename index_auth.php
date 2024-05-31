@@ -35,6 +35,7 @@ if (isset($_SESSION['id_user'])) {
             <div class="form-content">
                 <form class="auth_form" action="./php_handler/auth.php" method="post">
                     <div class="error_message">
+                        
                         <?php
                         session_start();
                         if (isset($_SESSION['message'])) {
